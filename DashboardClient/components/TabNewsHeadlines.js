@@ -50,7 +50,9 @@ const TabNewsHeadlines = (props) => {
     <div style={container}>
       <div style={menuBox}>
           <h2 style={titular}><Glyphicon glyph="globe" style ={glyphOffset}/>{props.header}</h2>
-          <p style={boxText}>{props.subL}</p>
+          <p style={boxText}>{props.sub1}</p>
+          <p style={boxText}>{props.sub2}</p>
+
       </div>
     </div>
   );

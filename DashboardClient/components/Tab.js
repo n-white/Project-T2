@@ -7,12 +7,9 @@ import {Image, PageHeader, small} from 'react-bootstrap';
 var container = {
 	'height': '150px',
 	'float': 'left',
-<<<<<<< HEAD
-	'width': '100%'
-=======
+
 	'width': '100%',
 	
->>>>>>> 0625291982af9680419d35a2113958acfe53f723
 }
 
 var menuBox = {

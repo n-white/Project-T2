@@ -435,9 +435,6 @@ class Dashboard extends React.Component {
                   }
                 </NavDropdown>
               </Nav>
-              <Nav style ={header}>
-                <p>Test</p>
-              </Nav>
             </Navbar>
           </Row>
           <Row>
@@ -453,7 +450,7 @@ class Dashboard extends React.Component {
                 <TabPopularTweets info={this.state.trendHistory} header="MOST POPULAR TWEETS" sub={this.state.representativeTweet} />
               </Row>
               <Row>
-                <TabNewsHeadlines info={this.state.trendHistory} header="MOST POPULAR HEADLINES" sub={this.state.facebookTopHeadlines[0]} sub2={this.state.facebookTopHeadlines[1]}/>
+                <TabNewsHeadlines info={this.state.trendHistory} header="MOST POPULAR HEADLINES" sub1={this.state.facebookTopHeadlines[0]} sub2={this.state.facebookTopHeadlines[1]}/>
               </Row>
             </Col>
             <Col md={6} mdPull={6}>
