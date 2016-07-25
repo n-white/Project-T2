@@ -8,20 +8,21 @@ module.exports = {
 	
 	grabFbook: function(req, res) {
 
-		// Search through the article archive using the largest keyword in the trend
-		var largestKeyword = '';
+		// Get the first two keywords of the trend name
+		var twoKeywords = '';
 		var temp = req.body.q.split(' ');
 
 		temp.forEach(function(item, index) {
 			if (index === 0) {
-				largestKeyword += item
+				twoKeywords += item
 			} else if (index === 1) {
-				largestKeyword += ' ' + item
+				twoKeywords += ' ' + item
 			}
 		})
 
 		// Search the database for articles that contain the selected trend
-		db.FB_Sentiments.findAll({where: {status_message: {like: '%' + largestKeyword + '%'}}}).then(function(data) {
+		// Specifically, search is performed on the FB_Sentiments table in MySQL using the first two key words of a trend name
+		db.FB_Sentiments.findAll({where: {status_message: {like: '%' + twoKeywords + '%'}}}).then(function(data) {
 			
 			// Declare all the variables we will want to send back to the client side
 			var num_likes = 0;
@@ -32,7 +33,7 @@ module.exports = {
 			var num_angrys = 0;
 			var counter = data.length;
 
-			// Iterate through the data object and tally up all of the respective reactions etc 
+			// Iterate through the data object and tally up all of the respective reactions 
 			for (var i = 0; i < data.length; i++) {
 				num_likes += data[i].dataValues.num_likes;
 				num_loves += data[i].dataValues.num_loves;
@@ -51,7 +52,7 @@ module.exports = {
 
 			totalReactions = num_wows + num_hahas + num_sads + num_angrys + num_loves
 
-			// Compute how much each reaction accounts for among the total reactions
+			// Compute how much each reaction accounts for (percentage) among the total reactions
 			num_loves = num_loves	/ totalReactions;
 			num_wows = num_wows / totalReactions;
 			num_hahas = num_hahas / totalReactions;
@@ -63,7 +64,7 @@ module.exports = {
 
 			// Declare a Top Article which we'll pass to the front end
 			var topArticle = {title: 'No relevant news articles found', likes: 0}
-			var secondArticle = {title: 'No Relevant news articles found', likes: 0}
+			var secondArticle = {title: '', likes: 0}
 
 			// Update the tempObj with all of the headlines found
 			// Update the topArticle and secondArticle with the headlines that have the most number of likes
@@ -77,9 +78,8 @@ module.exports = {
 				}
 			})
 
-			// Find the most dominant facebook reaction
-			
-			var tempReactions = [[num_wows, 'mostly surprised'], [num_hahas, 'mostly amused'], [num_sads, 'mostly sad'], [num_angrys, 'mostly angry'], [num_loves, 'mostly loves']];
+			// Find the most dominant facebook reaction			
+			var tempReactions = [[num_wows, 'mostly surprised'], [num_hahas, 'mostly amused'], [num_sads, 'mostly sad'], [num_angrys, 'mostly angry'], [num_loves, 'mostly loved']];
 			tempReactions = tempReactions.sort(function(a,b) {
 				if (a[0] < b[0]) {
 					return 1;
@@ -90,12 +90,10 @@ module.exports = {
 				}
 			})
 
-			// Log the headlines to the console (for backend testing purposes)
-			// console.log('!!!!!!!!!!', tempObj, '???????????', topArticle);
-
+			// Create the final object to be sent to the client
 			var summary = {summary: tempReactions[0][1], topHeadline: topArticle.title, secondHeadline: secondArticle.title, likes: num_likes, loves: num_loves, wows: num_wows, hahas: num_hahas, sads: num_sads, angrys: num_angrys}
 
-			// console.log(summary)
+			console.log(summary)
 
 			res.send(summary)
 

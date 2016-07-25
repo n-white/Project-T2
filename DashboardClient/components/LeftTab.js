@@ -8,6 +8,7 @@ var container = {
 	'height': '150px',
 	'float': 'left',
 	'width': '100%',
+	'padding-right' : '7.5px'
 	
 }
 
@@ -40,7 +41,7 @@ var boxText = {
 }
 
 
-const Tab = (props) => {
+const LeftTab = (props) => {
   return (
     <div style={container}>
       <div style={menuBox}>
@@ -53,6 +54,6 @@ const Tab = (props) => {
 
 
 
-export default Tab;
+export default LeftTab;
 
 
