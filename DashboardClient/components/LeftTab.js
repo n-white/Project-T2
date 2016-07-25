@@ -7,12 +7,9 @@ import {Image, PageHeader, small} from 'react-bootstrap';
 var container = {
 	'height': '150px',
 	'float': 'left',
-<<<<<<< HEAD
-	'width': '100%'
-=======
 	'width': '100%',
+	'padding-right' : '7.5px'
 	
->>>>>>> 0625291982af9680419d35a2113958acfe53f723
 }
 
 var menuBox = {
@@ -44,7 +41,7 @@ var boxText = {
 }
 
 
-const Tab = (props) => {
+const LeftTab = (props) => {
   return (
     <div style={container}>
       <div style={menuBox}>
@@ -57,6 +54,6 @@ const Tab = (props) => {
 
 
 
-export default Tab;
+export default LeftTab;
 
 

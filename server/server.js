@@ -17,7 +17,8 @@ app.use(bodyParser.json());
 app.use(morgan('dev'));
 app.use('/', routes);
 
-app.use(express.static('DashboardClient'));
+app.use('/', express.static('HomepageClient'));
+app.use('/dashboard', express.static('DashboardClient'));
 
 app.listen(3000, function (req, res) {
 	console.log('server is listening on 3000');
@@ -25,9 +26,9 @@ app.listen(3000, function (req, res) {
 
 //////
 
-var task = cron.schedule('* * * * *', function() {
-  console.log('Server is still running');
-}, false);
+// var task = cron.schedule('* * * * *', function() {
+//   console.log('Server is still running');
+// }, false);
 
 
 // var csvScheduler = cron.schedule('* * * * *', function() {
@@ -50,7 +51,7 @@ var task = cron.schedule('* * * * *', function() {
 
 
 
-task.start();
+// task.start();
 // csvScheduler.start();
 // facebookScrapeScheduler.start();
 

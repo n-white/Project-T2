@@ -1,7 +1,11 @@
 import React from 'react';
 import Tab from './Tab';
-import Tab2 from './Tab2';
-import Tab3 from './Tab3';
+
+import LeftTab from './leftTab';
+import MidTab from './MidTab';
+import RightTab from './RightTab';
+import TabPopularTweets from './TabPopularTweets';
+import TabNewsHeadlines from './TabNewsHeadlines';
 import ReactDOM from 'react-dom';
 
 
@@ -125,7 +129,7 @@ class Dashboard extends React.Component {
         });
         console.log(d.topHeadline);
         console.log('response fb mapped: ', fbdata, d);
-        console.log('###', context.state);
+        console.log('###$$$$$$$$$$$$$', context.state);
         d3.select('#facebookChart').selectAll('svg').remove();
         // context.updateChart(context.state.facebookData, '#facebookChart');
         context.updateDonutChart(context.state.facebookData);
@@ -347,19 +351,22 @@ class Dashboard extends React.Component {
       'font-color': 'white',
       'border-color': 'rgba(231, 231, 231, 0)',
       'margin-top': '2.5%',
-      'height': '80px',
+
+      'height': '65px',
       'font-size': '17px',
       'border-radius': '5px'
     }
 
     var headerli = {
-      'padding': '0 27px',
+
+      'padding': '0 10px',
       'display': 'block',
       'line-height': '74px',
       'font-size': '17px',
       '-webkit-transition': 'background .3s',
       'transition': 'background .3s',
-      'margin-top': '12.5px'
+
+      'margin-top': '10px'
     }
 
     var liColor = {
@@ -386,7 +393,8 @@ class Dashboard extends React.Component {
 
     var glyphOffset = {
       'marginRight':'15px',
-      'font-size':'25px'
+      'font-size':'25px',
+      'margin-bottom': '10px'
     }
 
     var twitterChart = {
@@ -394,8 +402,11 @@ class Dashboard extends React.Component {
       'left': '60%',
       '-webkit-transform': 'translateX(-50%)',
       '-ms-transform': 'translateX(-50%)',
-      'transform': 'translateX(-50%)'
+
+      'transform': 'translateX(-50%)',
+      'padding-right': '27.5px'
     }
+
 
     return (
       
@@ -424,20 +435,25 @@ class Dashboard extends React.Component {
                   }
                 </NavDropdown>
               </Nav>
+              <Nav style ={header}>
+                <p>Test</p>
+              </Nav>
             </Navbar>
           </Row>
           <Row>
-            <Col xs={6} md={4}><Tab style = {styles} info={this.state.trendHistory} header={this.state.currentTrend} sub="Current Topic"/></Col>
-            <Col xs={6} md={4}><Tab info={this.state.publicSentiment} header="PUBLIC SENTIMENT" sub={this.state.twitterSummary}/></Col>
-            <Col xs={6} md={4}><Tab info={this.state.emotionalFeedback} header={"EMOTIONAL FEEDBACK"} sub={this.state.facebookSummary}/></Col>
+
+            <Col xs={6} md={4}><LeftTab info={this.state.trendHistory} header={this.state.currentTrend} sub="Current Topic"/></Col>
+            <Col xs={6} md={4}><MidTab info={this.state.publicSentiment} header="PUBLIC SENTIMENT" sub={this.state.twitterSummary}/></Col>
+            <Col xs={6} md={4}><RightTab info={this.state.emotionalFeedback} header={"EMOTIONAL FEEDBACK"} sub={this.state.facebookSummary}/></Col>
           </Row>
           <Row>
             <Col md={6} mdPush={6}>
               <Row>  
-                <Tab2 info={this.state.trendHistory} header="MOST POPULAR TWEETS" sub={this.state.representativeTweet} />
+
+                <TabPopularTweets info={this.state.trendHistory} header="MOST POPULAR TWEETS" sub={this.state.representativeTweet} />
               </Row>
               <Row>
-                <Tab3 info={this.state.trendHistory} header="MOST POPULAR HEADLINES" sub={this.state.facebookTopHeadlines[0]} sub2={this.state.facebookTopHeadlines[1]}/>
+                <TabNewsHeadlines info={this.state.trendHistory} header="MOST POPULAR HEADLINES" sub={this.state.facebookTopHeadlines[0]} sub2={this.state.facebookTopHeadlines[1]}/>
               </Row>
             </Col>
             <Col md={6} mdPull={6}>
