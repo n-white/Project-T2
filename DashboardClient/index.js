@@ -60880,7 +60880,7 @@
 							_react2.default.createElement(
 									'p',
 									{ style: boxText },
-									props.sub
+									props.sub ? props.sub : 'N/A'
 							)
 					)
 			);
@@ -60957,7 +60957,7 @@
 							_react2.default.createElement(
 									'p',
 									{ style: boxText },
-									props.sub
+									props.sub ? props.sub : "N/A"
 							)
 					)
 			);
