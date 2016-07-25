@@ -444,8 +444,6 @@ class Dashboard extends React.Component {
               <div style={outline}>
                 <h1 style={titular}>SENTIMENT ANALYSIS</h1>
                 <div id="twitterChart" style={twitterChart}></div>
-                <h2>Facebook Sentiment</h2>
-                <div id="facebookChart"></div>
               </div>
             </Col>
           </Row>
