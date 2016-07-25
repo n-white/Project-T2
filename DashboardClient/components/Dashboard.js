@@ -37,14 +37,16 @@ class Dashboard extends React.Component {
       publicSentiment: '',
       emotionalFeedback: '',
       trendHistory: '',
-      representativeTweet: '',
+      representativeTweet1: '',
+      representativeTweet2: '',
       representativeNewsSource: '',
       twitterSpinner: false,
       facebookSpinner: false, //not likely to be needed
       twitterSummary: '',
       facebookSummary: '',
       facebookTopHeadlines: '',
-      facebookLikes: ''
+      facebookLikes: '',
+      currentChart: 'twitterChart'
 
     }
   }
@@ -157,7 +159,8 @@ class Dashboard extends React.Component {
           return item;
         });
         context.setState({
-          representativeTweet: tweet
+          representativeTweet1: tweet[0],
+          representativeTweet2: tweet[1]
         })
       },
       dataType: 'json'
@@ -169,9 +172,12 @@ class Dashboard extends React.Component {
     this.setState({
       currentTrend: q
     })
+    if(this.state.currentChart === "twitterChart"){
+      this.twitterGrab(q);
+    } else {
+      this.facebookGrab(q);
+    }
     this.topTweetGrab(q);
-    this.facebookGrab(q);
-    this.twitterGrab(q);
   }
 
   updateChart (data, id) {
@@ -353,8 +359,10 @@ class Dashboard extends React.Component {
     d3.select('#sentimentChart').selectAll('svg').remove();
     if(currentChartClass === "twitterChart") {
       this.updateDonutChart(this.state.facebookData);
+      this.setState({currentChart: 'facebookChart'});
     } else {
       this.updateChart(this.state.twitterData, '#sentimentChart');
+      this.setState({currentChart: 'twitterChart'});
     }
   }
 
@@ -412,7 +420,8 @@ class Dashboard extends React.Component {
 
     var sentimentChart = {
       'position': 'relative',
-      'left': '60%',
+      'left': '70%',
+      'top': '3%',
       '-webkit-transform': 'translateX(-50%)',
       '-ms-transform': 'translateX(-50%)',
 
@@ -461,7 +470,7 @@ class Dashboard extends React.Component {
             <Col md={6} mdPush={6}>
               <Row>  
 
-                <TabPopularTweets info={this.state.trendHistory} header="MOST POPULAR TWEETS" sub={this.state.representativeTweet} />
+                <TabPopularTweets info={this.state.trendHistory} header="MOST POPULAR TWEETS" sub1={this.state.representativeTweet1} sub2={this.state.representativeTweet2} />
               </Row>
               <Row>
                 <TabNewsHeadlines info={this.state.trendHistory} header="MOST POPULAR HEADLINES" sub1={this.state.facebookTopHeadlines[0]} sub2={this.state.facebookTopHeadlines[1]}/>
