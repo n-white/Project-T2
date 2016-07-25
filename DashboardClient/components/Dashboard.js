@@ -1,9 +1,9 @@
 import React from 'react';
-import Pie from './Pie';
 import Tab from './Tab';
 import Tab2 from './Tab2';
 import Tab3 from './Tab3';
 import ReactDOM from 'react-dom';
+
 
 import {Grid, Row, Col, Clearfix, Panel, Well, Button, Glyphicon} from 'react-bootstrap';
 import {Navbar, Nav, NavItem, NavDropdown, MenuItem, Image, Jumbotron} from 'react-bootstrap';
@@ -368,7 +368,8 @@ class Dashboard extends React.Component {
 
     var outline = {
       'background-color': 'rgb(57, 66, 100)',
-      'height': '425px',
+      'height': '525px',
+      'border-radius': '5px'
     }
 
     var titular = {
@@ -381,8 +382,20 @@ class Dashboard extends React.Component {
     'color': 'rgb(255, 255, 255)',
     'font-weight': 'bold',
     'background': '#35aadc'
-}
+    }
 
+    var glyphOffset = {
+      'marginRight':'15px',
+      'font-size':'25px'
+    }
+
+    var twitterChart = {
+      'position': 'relative',
+      'left': '60%',
+      '-webkit-transform': 'translateX(-50%)',
+      '-ms-transform': 'translateX(-50%)',
+      'transform': 'translateX(-50%)'
+    }
 
     return (
       
@@ -391,7 +404,7 @@ class Dashboard extends React.Component {
             <Navbar style={header}>
               <Navbar.Header>
                 <Navbar.Brand style={headerli}>
-                  <a href="#">Trend Wave</a>
+                  <a href="#" ><Glyphicon glyph="signal" style ={glyphOffset}/>Trend Wave</a>
                 </Navbar.Brand>
               </Navbar.Header>
               <Nav style={headerli}>
@@ -430,7 +443,7 @@ class Dashboard extends React.Component {
             <Col md={6} mdPull={6}>
               <div style={outline}>
                 <h1 style={titular}>SENTIMENT ANALYSIS</h1>
-                <div id="twitterChart" style={this.state.twitterSpinner ? {backgroundImage: 'url(styles/spiffygif_46x46.gif)', 'background-repeat':'no-repeat'} : {backgroundImage: 'none'}}></div>
+                <div id="twitterChart" style={twitterChart}></div>
                 <h2>Facebook Sentiment</h2>
                 <div id="facebookChart"></div>
               </div>
@@ -454,11 +467,3 @@ var map = function(obj, cb){
   }
   return result;
 }
-
-
-
-
-
-
-
-
