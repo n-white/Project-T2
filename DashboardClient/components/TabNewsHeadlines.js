@@ -12,7 +12,7 @@ var container = {
 }
 
 var menuBox = {
-	'height': '175px',
+	'height': '200px',
 	'margin-bottom': '25px',
 	'background': '#394264',
 	'border-radius': '5px'

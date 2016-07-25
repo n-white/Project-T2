@@ -21188,9 +21188,9 @@
 	    value: function componentDidMount() {
 	      //start everything
 	      this.getTrends();
-	      this.updateChart(this.state.twitterData, '#twitterChart');
-	      // this.updateChart(this.state.twitterData, '#facebookChart');
-	      this.updateDonutChart(this.state.facebookData);
+	      this.updateChart(this.state.twitterData, '#sentimentChart');
+	      // this.updateChart(this.state.twitterData, '#sentimentChart');
+	      // this.updateDonutChart(this.state.facebookData);
 	      // setInterval(this.getTrends.bind(this), 3000);
 	    }
 	  }, {
@@ -21226,8 +21226,8 @@
 	            twitterSpinner: false,
 	            twitterSummary: d.summary
 	          });
-	          d3.select('#twitterChart').selectAll('svg').remove();
-	          context.updateChart(context.state.twitterData, '#twitterChart');
+	          d3.select('#sentimentChart').selectAll('svg').remove();
+	          context.updateChart(context.state.twitterData, '#sentimentChart');
 	        },
 	        dataType: 'json'
 	      });
@@ -21268,8 +21268,8 @@
 	          console.log(d.topHeadline);
 	          console.log('response fb mapped: ', fbdata, d);
 	          console.log('###$$$$$$$$$$$$$', context.state);
-	          d3.select('#facebookChart').selectAll('svg').remove();
-	          // context.updateChart(context.state.facebookData, '#facebookChart');
+	          d3.select('#sentimentChart').selectAll('svg').remove();
+	          // context.updateChart(context.state.facebookData, '#sentimentChart');
 	          context.updateDonutChart(context.state.facebookData);
 	        },
 	        dataType: 'json'
@@ -21314,9 +21314,9 @@
 	  }, {
 	    key: 'updateChart',
 	    value: function updateChart(data, id) {
-	      var width = 450,
+	      var width = 350,
 	          //960
-	      height = 450,
+	      height = 350,
 	          //500
 	      radius = Math.min(width, height) / 2;
 
@@ -21333,7 +21333,7 @@
 	        return d.score;
 	      });
 	      //append both and svg and a g (group) element to the page. Move it over to the middle
-	      var svg = d3.select(id).append('svg').attr('width', width).attr('height', height).append('g').attr('transform', 'translate(' + width / 2 + "," + height / 2 + ')');
+	      var svg = d3.select(id).append('svg').attr('class', 'twitterChart').attr('width', width).attr('height', height).append('g').attr('transform', 'translate(' + width / 2 + "," + height / 2 + ')');
 
 	      //Apply data to pie and add g's on enter
 	      var g = svg.selectAll('.arc').data(pie(data)).enter().append('g').attr('class', 'arc');
@@ -21353,8 +21353,8 @@
 	  }, {
 	    key: 'updateDonutChart',
 	    value: function updateDonutChart(dataset) {
-	      var width = 450,
-	          height = 450,
+	      var width = 350,
+	          height = 350,
 	          outerRadius = Math.min(width, height) * .5 - 10,
 	          innerRadius = outerRadius * .6;
 
@@ -21387,7 +21387,7 @@
 
 	      var pie = d3.layout.pie().sort(null);
 
-	      var svg = d3.select("#facebookChart").append("svg").attr("width", width).attr("height", height);
+	      var svg = d3.select("#sentimentChart").append("svg").attr('class', 'facebookChart').attr("width", width).attr("height", height);
 
 	      svg.selectAll(".arc").data(arcs(data0, data1)).enter().append("g").attr("class", "arc").attr("transform", "translate(" + width / 2 + "," + height / 2 + ")").append("path").attr("fill", function (d, i) {
 	        return color(i);
@@ -21414,7 +21414,7 @@
 	      // end copied code //
 
 	      function transition(state) {
-	        var path = d3.select('#facebookChart').selectAll(".arc > path").data(state ? arcs(data0, data1) : arcs(data1, data0));
+	        var path = d3.select('#sentimentChart').selectAll(".arc > path").data(state ? arcs(data0, data1) : arcs(data1, data0));
 
 	        var t0 = path.transition().duration(500).attrTween("d", tweenArc(function (d, i) {
 	          return {
@@ -21461,6 +21461,18 @@
 	      }
 	    }
 	  }, {
+	    key: 'toggleChart',
+	    value: function toggleChart() {
+	      var currentChart = d3.select('#sentimentChart').selectAll('svg');
+	      var currentChartClass = currentChart[0][0].className.animVal;
+	      d3.select('#sentimentChart').selectAll('svg').remove();
+	      if (currentChartClass === "twitterChart") {
+	        this.updateDonutChart(this.state.facebookData);
+	      } else {
+	        this.updateChart(this.state.twitterData, '#sentimentChart');
+	      }
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var header = {
@@ -21492,7 +21504,7 @@
 
 	      var outline = {
 	        'background-color': 'rgb(57, 66, 100)',
-	        'height': '525px',
+	        'height': '450px',
 	        'border-radius': '5px'
 	      };
 
@@ -21514,7 +21526,7 @@
 	        'margin-bottom': '10px'
 	      };
 
-	      var twitterChart = {
+	      var sentimentChart = {
 	        'position': 'relative',
 	        'left': '60%',
 	        '-webkit-transform': 'translateX(-50%)',
@@ -21572,6 +21584,11 @@
 	                    trend
 	                  );
 	                }.bind(this))
+	              ),
+	              _react2.default.createElement(
+	                _reactBootstrap.Button,
+	                { onClick: this.toggleChart.bind(this) },
+	                'Toggle Chart'
 	              )
 	            )
 	          )
@@ -21582,7 +21599,7 @@
 	          _react2.default.createElement(
 	            _reactBootstrap.Col,
 	            { xs: 6, md: 4 },
-	            _react2.default.createElement(_leftTab2.default, { info: this.state.trendHistory, header: this.state.currentTrend, sub: 'Current Topic' })
+	            _react2.default.createElement(_leftTab2.default, { info: this.state.trendHistory, header: this.state.currentTrend, sub: "Trend Score: " + Math.ceil(Math.random() * 100) })
 	          ),
 	          _react2.default.createElement(
 	            _reactBootstrap.Col,
@@ -21623,7 +21640,7 @@
 	                { style: titular },
 	                'SENTIMENT ANALYSIS'
 	              ),
-	              _react2.default.createElement('div', { id: 'twitterChart', style: twitterChart })
+	              _react2.default.createElement('div', { id: 'sentimentChart', style: sentimentChart })
 	            )
 	          )
 	        ),
@@ -61059,7 +61076,7 @@
 	};
 
 	var menuBox = {
-	  'height': '175px',
+	  'height': '200px',
 	  'margin-bottom': '25px',
 	  'background': '#394264',
 	  'border-radius': '5px'
