@@ -21170,14 +21170,16 @@
 	      publicSentiment: '',
 	      emotionalFeedback: '',
 	      trendHistory: '',
-	      representativeTweet: '',
+	      representativeTweet1: '',
+	      representativeTweet2: '',
 	      representativeNewsSource: '',
 	      twitterSpinner: false,
 	      facebookSpinner: false, //not likely to be needed
 	      twitterSummary: '',
 	      facebookSummary: '',
 	      facebookTopHeadlines: '',
-	      facebookLikes: ''
+	      facebookLikes: '',
+	      currentChart: 'twitterChart'
 
 	    };
 	    return _this;
@@ -21294,7 +21296,8 @@
 	            return item;
 	          });
 	          context.setState({
-	            representativeTweet: tweet
+	            representativeTweet1: tweet[0],
+	            representativeTweet2: tweet[1]
 	          });
 	        },
 	        dataType: 'json'
@@ -21307,9 +21310,12 @@
 	      this.setState({
 	        currentTrend: q
 	      });
+	      if (this.state.currentChart === "twitterChart") {
+	        this.twitterGrab(q);
+	      } else {
+	        this.facebookGrab(q);
+	      }
 	      this.topTweetGrab(q);
-	      this.facebookGrab(q);
-	      this.twitterGrab(q);
 	    }
 	  }, {
 	    key: 'updateChart',
@@ -21468,8 +21474,10 @@
 	      d3.select('#sentimentChart').selectAll('svg').remove();
 	      if (currentChartClass === "twitterChart") {
 	        this.updateDonutChart(this.state.facebookData);
+	        this.setState({ currentChart: 'facebookChart' });
 	      } else {
 	        this.updateChart(this.state.twitterData, '#sentimentChart');
+	        this.setState({ currentChart: 'twitterChart' });
 	      }
 	    }
 	  }, {
@@ -21528,7 +21536,8 @@
 
 	      var sentimentChart = {
 	        'position': 'relative',
-	        'left': '60%',
+	        'left': '70%',
+	        'top': '3%',
 	        '-webkit-transform': 'translateX(-50%)',
 	        '-ms-transform': 'translateX(-50%)',
 
@@ -21621,7 +21630,7 @@
 	            _react2.default.createElement(
 	              _reactBootstrap.Row,
 	              null,
-	              _react2.default.createElement(_TabPopularTweets2.default, { info: this.state.trendHistory, header: 'MOST POPULAR TWEETS', sub: this.state.representativeTweet })
+	              _react2.default.createElement(_TabPopularTweets2.default, { info: this.state.trendHistory, header: 'MOST POPULAR TWEETS', sub1: this.state.representativeTweet1, sub2: this.state.representativeTweet2 })
 	            ),
 	            _react2.default.createElement(
 	              _reactBootstrap.Row,
@@ -61037,7 +61046,17 @@
 	          { 'class': 'tweet-link', href: '#17' },
 	          '@FoxNews: '
 	        ),
-	        props.sub
+	        props.sub1
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        { style: boxText },
+	        _react2.default.createElement(
+	          'a',
+	          { 'class': 'tweet-link', href: '#17' },
+	          '@FoxNews: '
+	        ),
+	        props.sub2
 	      ),
 	      _react2.default.createElement(
 	        'p',

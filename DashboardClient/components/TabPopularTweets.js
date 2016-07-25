@@ -54,7 +54,8 @@ const TabPopularTweets = (props) => {
     <div style={container}>
       <div style={menuBox}>
           <h2 style={titular}><Glyphicon glyph="retweet" style ={glyphOffset}/>{props.header}</h2>
-          <p style={boxText}><a class="tweet-link" href="#17">@FoxNews: </a>{props.sub}</p>
+          <p style={boxText}><a class="tweet-link" href="#17">@FoxNews: </a>{props.sub1}</p>
+          <p style={boxText}><a class="tweet-link" href="#17">@FoxNews: </a>{props.sub2}</p>
           <p style={timeSent}>6 minutes ago</p>
 
       </div>
