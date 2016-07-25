@@ -106,12 +106,12 @@ module.exports = {
 									// reweight the positive and negative scores to add up to 100%
 									positive = (1 + Number(data.score)) / 2;
 									negative = 1 - positive;
-									res.send({summary: 'mostly positive', positive: positive, negative: negative});									
+									res.send({summary: 'Mostly Positive', positive: positive, negative: negative});									
 								} else {
 									// reweight the positive and negative scores to add up to 100%
 									negative = Math.abs((Number(data.score) - 1) / 2);
 									positive = 1 - negative;
-									res.send({summary: 'mostly negative', positive: positive, negative: negative});
+									res.send({summary: 'Mostly Negative', positive: positive, negative: negative});
 								}
 							});
 							
