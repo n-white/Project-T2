@@ -106,12 +106,12 @@ module.exports = {
 									// reweight the positive and negative scores to add up to 100%
 									positive = (1 + Number(data.score)) / 2;
 									negative = 1 - positive;
-									res.send({summary: 'mostly positive', positive: positive, negative: negative});									
+									res.send({summary: 'Mostly Positive', positive: positive, negative: negative});									
 								} else {
 									// reweight the positive and negative scores to add up to 100%
 									negative = Math.abs((Number(data.score) - 1) / 2);
 									positive = 1 - negative;
-									res.send({summary: 'mostly negative', positive: positive, negative: negative});
+									res.send({summary: 'Mostly Negative', positive: positive, negative: negative});
 								}
 							});
 							
@@ -137,12 +137,18 @@ module.exports = {
 		});
 
 		// Searh for 'popular' tweets
-		grabTweets.get('search/tweets', {q: query, count: 3, result_type: 'popular', lang: 'en', result_type: 'recent'}, function(error, tweets) {
+		grabTweets.get('search/tweets', {q: query, count: 3, result_type: 'popular', lang: 'en'}, function(error, tweets) {
 			if (error) {
 				throw error
 			} else {
+
+				// Calculate time of tweets
+				var firstTweetTime = Math.round((new Date().getTime() - new Date(tweets.statuses[0].created_at).getTime()) / 3600000);
+				var secondTweetTime = Math.round((new Date().getTime() - new Date(tweets.statuses[1].created_at).getTime()) / 3600000);
+
 				// Send top two tweets to front end
-				res.json({1: tweets.statuses[0].text, 2: tweets.statuses[1].text});
+				console.log(tweets.statuses[0].text)
+				res.json({firstUser: tweets.statuses[0].user.screen_name, firstTweet: tweets.statuses[0].text, firstTweetTime: firstTweetTime, secondUser: tweets.statuses[1].user.screen_name, secondTweet: tweets.statuses[1].text, secondTweetTime: secondTweetTime});
 			}
 		});		
 	}
