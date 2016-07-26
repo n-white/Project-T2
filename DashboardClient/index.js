@@ -21300,8 +21300,12 @@
 	            return item;
 	          });
 	          context.setState({
-	            representativeTweet1: tweet[0],
-	            representativeTweet2: tweet[1]
+	            representativeTweet1user: '@' + tweet[0],
+	            representativeTweet1headline: tweet[1],
+	            representativeTweet1time: tweet[2] + ' hours ago',
+	            representativeTweet2user: '@' + tweet[3],
+	            representativeTweet2headline: tweet[4],
+	            representativeTweet2time: tweet[5] + ' hours ago'
 	          });
 	        },
 	        dataType: 'json'
@@ -21634,7 +21638,7 @@
 	            _react2.default.createElement(
 	              _reactBootstrap.Row,
 	              null,
-	              _react2.default.createElement(_TabPopularTweets2.default, { info: this.state.trendHistory, header: 'MOST POPULAR TWEETS', sub1: this.state.representativeTweet1, sub2: this.state.representativeTweet2 })
+	              _react2.default.createElement(_TabPopularTweets2.default, { info: this.state.trendHistory, header: 'MOST POPULAR TWEETS', sub1: this.state.representativeTweet1user, sub2: this.state.representativeTweet1headline, sub3: this.state.representativeTweet1time, sub4: this.state.representativeTweet2user, sub5: this.state.representativeTweet2headline, sub6: this.state.representativeTweet2time })
 	            ),
 	            _react2.default.createElement(
 	              _reactBootstrap.Row,
@@ -61293,8 +61297,8 @@
 	};
 
 	var menuBox = {
-	  'height': '225px',
-	  'margin-bottom': '25px',
+	  'height': '230px',
+	  'margin-bottom': '10px',
 	  'background': '#394264',
 	  'border-radius': '5px'
 	};
@@ -61346,9 +61350,15 @@
 	        _react2.default.createElement(
 	          'a',
 	          { 'class': 'tweet-link', href: '#17' },
-	          '@FoxNews: '
+	          props.sub1
 	        ),
-	        props.sub1
+	        ' ',
+	        props.sub2
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        { style: timeSent },
+	        props.sub3
 	      ),
 	      _react2.default.createElement(
 	        'p',
@@ -61356,14 +61366,15 @@
 	        _react2.default.createElement(
 	          'a',
 	          { 'class': 'tweet-link', href: '#17' },
-	          '@FoxNews: '
+	          props.sub4
 	        ),
-	        props.sub2
+	        ' ',
+	        props.sub5
 	      ),
 	      _react2.default.createElement(
 	        'p',
 	        { style: timeSent },
-	        '6 minutes ago'
+	        props.sub6
 	      )
 	    )
 	  );

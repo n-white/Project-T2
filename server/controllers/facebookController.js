@@ -81,7 +81,7 @@ module.exports = {
 			})
 
 			// Find the most dominant facebook reaction			
-			var tempReactions = [[0, 'n/a'], [num_wows, 'Mostly Surprised'], [num_hahas, 'Mostly Amused'], [num_sads, 'Mostly Sad'], [num_angrys, 'Mostly Angry'], [num_loves, 'Mostly Loved']];
+			var tempReactions = [[0, 'N/A'], [num_wows, 'Mostly Surprised'], [num_hahas, 'Mostly Amused'], [num_sads, 'Mostly Sad'], [num_angrys, 'Mostly Angry'], [num_loves, 'Mostly Loved']];
 			tempReactions = tempReactions.sort(function(a,b) {
 				if (a[0] < b[0]) {
 					return 1;

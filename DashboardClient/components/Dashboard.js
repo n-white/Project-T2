@@ -160,8 +160,12 @@ class Dashboard extends React.Component {
           return item;
         });
         context.setState({
-          representativeTweet1: tweet[0],
-          representativeTweet2: tweet[1]
+          representativeTweet1user: '@' + tweet[0],
+          representativeTweet1headline: tweet[1],
+          representativeTweet1time: tweet[2] + ' hours ago',
+          representativeTweet2user: '@' + tweet[3],
+          representativeTweet2headline: tweet[4],
+          representativeTweet2time: tweet[5] + ' hours ago'
         })
       },
       dataType: 'json'
@@ -471,7 +475,7 @@ class Dashboard extends React.Component {
             <Col md={6} mdPush={6}>
               <Row>  
 
-                <TabPopularTweets info={this.state.trendHistory} header="MOST POPULAR TWEETS" sub1={this.state.representativeTweet1} sub2={this.state.representativeTweet2} />
+                <TabPopularTweets info={this.state.trendHistory} header="MOST POPULAR TWEETS" sub1={this.state.representativeTweet1user} sub2={this.state.representativeTweet1headline} sub3={this.state.representativeTweet1time} sub4={this.state.representativeTweet2user} sub5={this.state.representativeTweet2headline} sub6={this.state.representativeTweet2time}/>
               </Row>
               <Row>
                 <TabNewsHeadlines info={this.state.trendHistory} header="MOST POPULAR HEADLINES" sub1={this.state.facebookTopHeadlines[0]} sub2={this.state.facebookTopHeadlines[1]}/>

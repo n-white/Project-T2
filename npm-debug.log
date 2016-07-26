@@ -1,3 +1,4 @@
+<<<<<<< fd7a007f797e749b64d8d557d2aaa2460e9b081a
 148074 silly mapToRegistry registry https://registry.npmjs.org/
 148075 silly mapToRegistry data Result {
 148075 silly mapToRegistry   raw: 'is-extendable',
@@ -21348,3 +21349,650 @@
 157979 error peerinvalid Peer react-icons@2.2.1 wants react@^0.14.0 || ^15.0.0
 157979 error peerinvalid Peer react-router@2.6.0 wants react@^0.14.0 || ^15.0.0
 157980 verbose exit [ 1, true ]
+=======
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@2.15.8
+3 info using node@v4.4.7
+4 verbose readDependencies loading dependencies from /Users/neilWhite/Desktop/hackReactor/Project-T2/package.json
+5 warn package.json greenfield@1.0.0 No repository field.
+6 verbose install where, deps [ '/Users/neilWhite/Desktop/hackReactor/Project-T2',
+6 verbose install   [ 'babel-core',
+6 verbose install     'babel-loader',
+6 verbose install     'babel-preset-es2015',
+6 verbose install     'babel-preset-react',
+6 verbose install     'bluebird',
+6 verbose install     'body-parser',
+6 verbose install     'cors',
+6 verbose install     'd3',
+6 verbose install     'express',
+6 verbose install     'fs',
+6 verbose install     'google-trends-api',
+6 verbose install     'halogen',
+6 verbose install     'jquery',
+6 verbose install     'live-server',
+6 verbose install     'morgan',
+6 verbose install     'mysql',
+6 verbose install     'node-cron',
+6 verbose install     'nodemon',
+6 verbose install     'react',
+6 verbose install     'react-bootstrap',
+6 verbose install     'react-dom',
+6 verbose install     'react-faux-dom',
+6 verbose install     'react-fontawesome',
+6 verbose install     'react-icons',
+6 verbose install     'react-router',
+6 verbose install     'request',
+6 verbose install     'sequelize',
+6 verbose install     'underscore',
+6 verbose install     'watson-developer-cloud',
+6 verbose install     'webpack' ] ]
+7 verbose install where, peers [ '/Users/neilWhite/Desktop/hackReactor/Project-T2', [] ]
+8 verbose installManyTop reading for lifecycle /Users/neilWhite/Desktop/hackReactor/Project-T2/package.json
+9 info preinstall greenfield@1.0.0
+10 verbose installManyTop reading scoped package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/babel-core/package.json
+11 verbose installManyTop reading scoped package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/babel-loader/package.json
+12 verbose installManyTop reading scoped package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/babel-preset-es2015/package.json
+13 verbose installManyTop reading scoped package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/babel-preset-react/package.json
+14 verbose installManyTop reading scoped package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/bluebird/package.json
+15 verbose installManyTop reading scoped package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/body-parser/package.json
+16 verbose installManyTop reading scoped package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/cors/package.json
+17 verbose installManyTop reading scoped package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/d3/package.json
+18 verbose installManyTop reading scoped package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/express/package.json
+19 verbose installManyTop reading scoped package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/fs/package.json
+20 verbose installManyTop reading scoped package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/google-trends-api/package.json
+21 verbose installManyTop reading scoped package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/jquery/package.json
+22 verbose installManyTop reading scoped package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/live-server/package.json
+23 verbose installManyTop reading scoped package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/morgan/package.json
+24 verbose installManyTop reading scoped package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/mysql/package.json
+25 verbose installManyTop reading scoped package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/node-cron/package.json
+26 verbose installManyTop reading scoped package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/nodemon/package.json
+27 verbose installManyTop reading scoped package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/react/package.json
+28 verbose installManyTop reading scoped package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/react-bootstrap/package.json
+29 verbose installManyTop reading scoped package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/react-dom/package.json
+30 verbose installManyTop reading scoped package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/react-faux-dom/package.json
+31 verbose installManyTop reading scoped package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/react-fontawesome/package.json
+32 verbose installManyTop reading scoped package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/react-icons/package.json
+33 verbose installManyTop reading scoped package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/react-router/package.json
+34 verbose installManyTop reading scoped package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/request/package.json
+35 verbose installManyTop reading scoped package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/sequelize/package.json
+36 verbose installManyTop reading scoped package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/twitter/package.json
+37 verbose installManyTop reading scoped package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/underscore/package.json
+38 verbose installManyTop reading scoped package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/watson-developer-cloud/package.json
+39 verbose installManyTop reading scoped package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/webpack/package.json
+40 info package.json fs@0.0.2 fs is also the name of a node core module.
+41 info package.json fs@0.0.2 No description
+42 info package.json fs@0.0.2 No repository field.
+43 verbose readDependencies loading dependencies from /Users/neilWhite/Desktop/hackReactor/Project-T2/package.json
+44 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/babel-core/package.json
+45 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/babel-loader/package.json
+46 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/babel-preset-es2015/package.json
+47 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/babel-preset-react/package.json
+48 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/bluebird/package.json
+49 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/body-parser/package.json
+50 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/cors/package.json
+51 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/d3/package.json
+52 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/express/package.json
+53 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/fs/package.json
+54 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/google-trends-api/package.json
+55 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/jquery/package.json
+56 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/live-server/package.json
+57 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/morgan/package.json
+58 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/mysql/package.json
+59 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/node-cron/package.json
+60 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/nodemon/package.json
+61 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/react/package.json
+62 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/react-bootstrap/package.json
+63 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/react-dom/package.json
+64 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/react-faux-dom/package.json
+65 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/react-fontawesome/package.json
+66 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/react-icons/package.json
+67 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/react-router/package.json
+68 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/request/package.json
+69 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/sequelize/package.json
+70 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/twitter/package.json
+71 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/underscore/package.json
+72 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/watson-developer-cloud/package.json
+73 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/webpack/package.json
+74 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/.bin/live-server/package.json
+75 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/.bin/nodemon/package.json
+76 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/.bin/webpack/package.json
+77 verbose already installed skipping google-trends-api@^1.2.4 /Users/neilWhite/Desktop/hackReactor/Project-T2
+78 silly cache add args [ 'halogen@^0.2.0', null ]
+79 verbose cache add spec halogen@^0.2.0
+80 silly cache add parsed spec Result {
+80 silly cache add   raw: 'halogen@^0.2.0',
+80 silly cache add   scope: null,
+80 silly cache add   name: 'halogen',
+80 silly cache add   rawSpec: '^0.2.0',
+80 silly cache add   spec: '>=0.2.0 <0.3.0',
+80 silly cache add   type: 'range' }
+81 silly addNamed halogen@>=0.2.0 <0.3.0
+82 verbose addNamed ">=0.2.0 <0.3.0" is a valid semver range for halogen
+83 silly addNameRange { name: 'halogen', range: '>=0.2.0 <0.3.0', hasData: false }
+84 silly mapToRegistry name halogen
+85 silly mapToRegistry using default registry
+86 silly mapToRegistry registry https://registry.npmjs.org/
+87 silly mapToRegistry data Result {
+87 silly mapToRegistry   raw: 'halogen',
+87 silly mapToRegistry   scope: null,
+87 silly mapToRegistry   name: 'halogen',
+87 silly mapToRegistry   rawSpec: '',
+87 silly mapToRegistry   spec: 'latest',
+87 silly mapToRegistry   type: 'tag' }
+88 silly mapToRegistry uri https://registry.npmjs.org/halogen
+89 verbose addNameRange registry:https://registry.npmjs.org/halogen not in flight; fetching
+90 verbose already installed skipping jquery@^3.1.0 /Users/neilWhite/Desktop/hackReactor/Project-T2
+91 verbose already installed skipping live-server@^1.0.0 /Users/neilWhite/Desktop/hackReactor/Project-T2
+92 verbose already installed skipping morgan@^1.7.0 /Users/neilWhite/Desktop/hackReactor/Project-T2
+93 verbose already installed skipping mysql@^2.11.1 /Users/neilWhite/Desktop/hackReactor/Project-T2
+94 verbose already installed skipping node-cron@^1.1.1 /Users/neilWhite/Desktop/hackReactor/Project-T2
+95 verbose already installed skipping nodemon@^1.9.2 /Users/neilWhite/Desktop/hackReactor/Project-T2
+96 verbose already installed skipping react@^15.2.1 /Users/neilWhite/Desktop/hackReactor/Project-T2
+97 verbose already installed skipping react-bootstrap@^0.29.5 /Users/neilWhite/Desktop/hackReactor/Project-T2
+98 verbose request uri https://registry.npmjs.org/halogen
+99 verbose request no auth needed
+100 info attempt registry request try #1 at 5:09:44 PM
+101 verbose request id 8767cf71d57c576b
+102 http request GET https://registry.npmjs.org/halogen
+103 verbose already installed skipping react-dom@^15.2.1 /Users/neilWhite/Desktop/hackReactor/Project-T2
+104 verbose already installed skipping react-faux-dom@^2.7.1 /Users/neilWhite/Desktop/hackReactor/Project-T2
+105 verbose already installed skipping react-fontawesome@^1.1.0 /Users/neilWhite/Desktop/hackReactor/Project-T2
+106 verbose already installed skipping react-icons@^2.2.1 /Users/neilWhite/Desktop/hackReactor/Project-T2
+107 verbose already installed skipping react-router@^2.6.0 /Users/neilWhite/Desktop/hackReactor/Project-T2
+108 verbose already installed skipping request@^2.73.0 /Users/neilWhite/Desktop/hackReactor/Project-T2
+109 verbose already installed skipping sequelize@^3.23.6 /Users/neilWhite/Desktop/hackReactor/Project-T2
+110 verbose already installed skipping underscore@^1.8.3 /Users/neilWhite/Desktop/hackReactor/Project-T2
+111 verbose already installed skipping watson-developer-cloud@^1.12.2 /Users/neilWhite/Desktop/hackReactor/Project-T2
+112 verbose already installed skipping webpack@^1.13.1 /Users/neilWhite/Desktop/hackReactor/Project-T2
+113 verbose already installed skipping babel-core@^6.11.4 /Users/neilWhite/Desktop/hackReactor/Project-T2
+114 verbose already installed skipping babel-loader@^6.2.4 /Users/neilWhite/Desktop/hackReactor/Project-T2
+115 verbose already installed skipping babel-preset-es2015@^6.9.0 /Users/neilWhite/Desktop/hackReactor/Project-T2
+116 verbose already installed skipping babel-preset-react@^6.11.1 /Users/neilWhite/Desktop/hackReactor/Project-T2
+117 verbose already installed skipping bluebird@^3.4.1 /Users/neilWhite/Desktop/hackReactor/Project-T2
+118 verbose already installed skipping body-parser@^1.15.2 /Users/neilWhite/Desktop/hackReactor/Project-T2
+119 verbose already installed skipping cors@^2.7.1 /Users/neilWhite/Desktop/hackReactor/Project-T2
+120 verbose already installed skipping d3@^3.5.17 /Users/neilWhite/Desktop/hackReactor/Project-T2
+121 verbose already installed skipping express@^4.14.0 /Users/neilWhite/Desktop/hackReactor/Project-T2
+122 verbose already installed skipping fs@0.0.2 /Users/neilWhite/Desktop/hackReactor/Project-T2
+123 http 200 https://registry.npmjs.org/halogen
+124 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+124 verbose headers   etag: '"4H34X61VWQ75SSNVIIS5DYARC"',
+124 verbose headers   'content-type': 'application/json',
+124 verbose headers   'content-encoding': 'gzip',
+124 verbose headers   'cache-control': 'max-age=300',
+124 verbose headers   'content-length': '3466',
+124 verbose headers   'accept-ranges': 'bytes',
+124 verbose headers   date: 'Tue, 26 Jul 2016 00:09:45 GMT',
+124 verbose headers   via: '1.1 varnish',
+124 verbose headers   age: '0',
+124 verbose headers   connection: 'keep-alive',
+124 verbose headers   'x-served-by': 'cache-ord1737-ORD',
+124 verbose headers   'x-cache': 'MISS',
+124 verbose headers   'x-cache-hits': '0',
+124 verbose headers   'x-timer': 'S1469491784.989436,VS0,VE82',
+124 verbose headers   vary: 'Accept-Encoding' }
+125 silly get cb [ 200,
+125 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+125 silly get     etag: '"4H34X61VWQ75SSNVIIS5DYARC"',
+125 silly get     'content-type': 'application/json',
+125 silly get     'content-encoding': 'gzip',
+125 silly get     'cache-control': 'max-age=300',
+125 silly get     'content-length': '3466',
+125 silly get     'accept-ranges': 'bytes',
+125 silly get     date: 'Tue, 26 Jul 2016 00:09:45 GMT',
+125 silly get     via: '1.1 varnish',
+125 silly get     age: '0',
+125 silly get     connection: 'keep-alive',
+125 silly get     'x-served-by': 'cache-ord1737-ORD',
+125 silly get     'x-cache': 'MISS',
+125 silly get     'x-cache-hits': '0',
+125 silly get     'x-timer': 'S1469491784.989436,VS0,VE82',
+125 silly get     vary: 'Accept-Encoding' } ]
+126 verbose get saving halogen to /Users/neilWhite/.npm/registry.npmjs.org/halogen/.cache.json
+127 verbose correctMkdir /Users/neilWhite/.npm correctMkdir not in flight; initializing
+128 silly addNameRange number 2 { name: 'halogen', range: '>=0.2.0 <0.3.0', hasData: true }
+129 silly addNameRange versions [ 'halogen',
+129 silly addNameRange   [ '0.0.0',
+129 silly addNameRange     '0.1.0',
+129 silly addNameRange     '0.1.1',
+129 silly addNameRange     '0.1.2',
+129 silly addNameRange     '0.1.3',
+129 silly addNameRange     '0.1.4',
+129 silly addNameRange     '0.1.5',
+129 silly addNameRange     '0.1.6',
+129 silly addNameRange     '0.1.7',
+129 silly addNameRange     '0.1.8',
+129 silly addNameRange     '0.1.9',
+129 silly addNameRange     '0.1.10',
+129 silly addNameRange     '0.2.0' ] ]
+130 silly addNamed halogen@0.2.0
+131 verbose addNamed "0.2.0" is a plain semver version for halogen
+132 silly mapToRegistry name halogen
+133 silly mapToRegistry using default registry
+134 silly mapToRegistry registry https://registry.npmjs.org/
+135 silly mapToRegistry data Result {
+135 silly mapToRegistry   raw: 'halogen',
+135 silly mapToRegistry   scope: null,
+135 silly mapToRegistry   name: 'halogen',
+135 silly mapToRegistry   rawSpec: '',
+135 silly mapToRegistry   spec: 'latest',
+135 silly mapToRegistry   type: 'tag' }
+136 silly mapToRegistry uri https://registry.npmjs.org/halogen
+137 verbose addRemoteTarball https://registry.npmjs.org/halogen/-/halogen-0.2.0.tgz not in flight; adding
+138 verbose addRemoteTarball [ 'https://registry.npmjs.org/halogen/-/halogen-0.2.0.tgz',
+138 verbose addRemoteTarball   '1c65a99a9352e6bf02f41beb7081852fce7e7473' ]
+139 info retry fetch attempt 1 at 5:09:45 PM
+140 info attempt registry request try #1 at 5:09:45 PM
+141 http fetch GET https://registry.npmjs.org/halogen/-/halogen-0.2.0.tgz
+142 http fetch 200 https://registry.npmjs.org/halogen/-/halogen-0.2.0.tgz
+143 silly fetchAndShaCheck shasum 1c65a99a9352e6bf02f41beb7081852fce7e7473
+144 verbose addTmpTarball /var/folders/6z/g3vy8fbd6yv986sdvkv2zkh40000gn/T/npm-3016-ac9942a2/registry.npmjs.org/halogen/-/halogen-0.2.0.tgz not in flight; adding
+145 verbose addTmpTarball already have metadata; skipping unpack for halogen@0.2.0
+146 verbose correctMkdir /Users/neilWhite/.npm correctMkdir not in flight; initializing
+147 silly cache afterAdd halogen@0.2.0
+148 verbose afterAdd /Users/neilWhite/.npm/halogen/0.2.0/package/package.json not in flight; writing
+149 verbose correctMkdir /Users/neilWhite/.npm correctMkdir not in flight; initializing
+150 verbose afterAdd /Users/neilWhite/.npm/halogen/0.2.0/package/package.json written
+151 silly install resolved [ { name: 'halogen',
+151 silly install resolved     version: '0.2.0',
+151 silly install resolved     description: 'A collection of loading spinners with React.js',
+151 silly install resolved     main: 'Halogen.js',
+151 silly install resolved     author: { name: 'Yuanyan Cao' },
+151 silly install resolved     license: 'MIT',
+151 silly install resolved     repository:
+151 silly install resolved      { type: 'git',
+151 silly install resolved        url: 'git+https://github.com/yuanyan/halogen.git' },
+151 silly install resolved     dependencies: { domkit: '0.0.1' },
+151 silly install resolved     peerDependencies: { react: '^0.14.8', 'react-dom': '^0.14.8' },
+151 silly install resolved     devDependencies:
+151 silly install resolved      { 'babel-preset-es2015': '^6.6.0',
+151 silly install resolved        'babel-preset-react': '^6.5.0',
+151 silly install resolved        'babel-preset-stage-1': '^6.5.0',
+151 silly install resolved        babelify: '^7.2.0',
+151 silly install resolved        browserify: '^6.3.3',
+151 silly install resolved        'browserify-shim': '^3.8.0',
+151 silly install resolved        chalk: '^0.5.1',
+151 silly install resolved        codemirror: '^5.0.0',
+151 silly install resolved        del: '^0.1.3',
+151 silly install resolved        gulp: '^3.8.10',
+151 silly install resolved        'gulp-babel': '^6.1.2',
+151 silly install resolved        'gulp-bump': '^0.1.11',
+151 silly install resolved        'gulp-connect': '^2.2.0',
+151 silly install resolved        'gulp-gh-pages': '^0.4.0',
+151 silly install resolved        'gulp-git': '^0.5.5',
+151 silly install resolved        'gulp-less': '^1.3.6',
+151 silly install resolved        'gulp-rename': '^1.2.0',
+151 silly install resolved        'gulp-streamify': '^0.0.5',
+151 silly install resolved        'gulp-uglify': '^1.0.1',
+151 silly install resolved        'gulp-util': '^3.0.1',
+151 silly install resolved        'merge-stream': '^0.1.6',
+151 silly install resolved        'vinyl-paths': '^1.0.0',
+151 silly install resolved        'vinyl-source-stream': '^1.0.0',
+151 silly install resolved        watchify: '^2.1.1' },
+151 silly install resolved     browserify: { transform: [] },
+151 silly install resolved     'browserify-shim': { react: 'global:React' },
+151 silly install resolved     scripts: { release: 'gulp release' },
+151 silly install resolved     keywords: [ 'react', 'react-component', 'loader', 'spinner', 'halogen' ],
+151 silly install resolved     gitHead: 'd7f65ac66e61c4bf5acf1dde4173d7a2d60f4bfb',
+151 silly install resolved     bugs: { url: 'https://github.com/yuanyan/halogen/issues' },
+151 silly install resolved     homepage: 'https://github.com/yuanyan/halogen#readme',
+151 silly install resolved     _id: 'halogen@0.2.0',
+151 silly install resolved     _shasum: '1c65a99a9352e6bf02f41beb7081852fce7e7473',
+151 silly install resolved     _from: 'halogen@>=0.2.0 <0.3.0',
+151 silly install resolved     _npmVersion: '3.8.1',
+151 silly install resolved     _nodeVersion: '4.0.0',
+151 silly install resolved     _npmUser: { name: 'yuanyan', email: 'yuanyan.cao@gmail.com' },
+151 silly install resolved     maintainers: [ [Object] ],
+151 silly install resolved     dist:
+151 silly install resolved      { shasum: '1c65a99a9352e6bf02f41beb7081852fce7e7473',
+151 silly install resolved        tarball: 'https://registry.npmjs.org/halogen/-/halogen-0.2.0.tgz' },
+151 silly install resolved     _npmOperationalInternal:
+151 silly install resolved      { host: 'packages-12-west.internal.npmjs.com',
+151 silly install resolved        tmp: 'tmp/halogen-0.2.0.tgz_1459600354190_0.44947334798052907' },
+151 silly install resolved     directories: {},
+151 silly install resolved     _resolved: 'https://registry.npmjs.org/halogen/-/halogen-0.2.0.tgz' } ]
+152 info install halogen@0.2.0 into /Users/neilWhite/Desktop/hackReactor/Project-T2
+153 info installOne halogen@0.2.0
+154 verbose installOne of halogen to /Users/neilWhite/Desktop/hackReactor/Project-T2 not in flight; installing
+155 verbose correctMkdir /Users/neilWhite/.npm/_locks correctMkdir not in flight; initializing
+156 verbose lock using /Users/neilWhite/.npm/_locks/halogen-07dd9e8f9090934d.lock for /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/halogen
+157 silly install write writing halogen 0.2.0 to /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/halogen
+158 verbose unbuild node_modules/halogen
+159 silly gentlyRm /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/halogen is being purged from base /Users/neilWhite/Desktop/hackReactor/Project-T2
+160 verbose gentlyRm don't care about contents; nuking /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/halogen
+161 verbose tar unpack /Users/neilWhite/.npm/halogen/0.2.0/package.tgz
+162 verbose tar unpacking to /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/halogen
+163 silly gentlyRm /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/halogen is being purged
+164 verbose gentlyRm don't care about contents; nuking /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/halogen
+165 silly gunzTarPerm modes [ '755', '644' ]
+166 silly gunzTarPerm extractEntry package.json
+167 silly gunzTarPerm extractEntry .npmignore
+168 silly gunzTarPerm extractEntry README.md
+169 silly gunzTarPerm extractEntry LICENSE
+170 silly gunzTarPerm extractEntry ClipLoader.js
+171 silly gunzTarPerm extractEntry MoonLoader.js
+172 silly gunzTarPerm extractEntry PacmanLoader.js
+173 silly gunzTarPerm extractEntry BeatLoader.js
+174 silly gunzTarPerm extractEntry RingLoader.js
+175 silly gunzTarPerm extractEntry RiseLoader.js
+176 silly gunzTarPerm extractEntry RotateLoader.js
+177 silly gunzTarPerm extractEntry ScaleLoader.js
+178 silly gunzTarPerm extractEntry SkewLoader.js
+179 silly gunzTarPerm extractEntry Halogen.js
+180 silly gunzTarPerm extractEntry SquareLoader.js
+181 silly gunzTarPerm extractEntry GridLoader.js
+182 silly gunzTarPerm extractEntry SyncLoader.js
+183 silly gunzTarPerm extractEntry FadeLoader.js
+184 silly gunzTarPerm extractEntry DotLoader.js
+185 silly gunzTarPerm extractEntry PulseLoader.js
+186 silly gunzTarPerm extractEntry BounceLoader.js
+187 verbose write writing to /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/halogen/package.json
+188 info preinstall halogen@0.2.0
+189 verbose readDependencies loading dependencies from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/halogen/package.json
+190 silly prepareForInstallMany adding domkit@0.0.1 from halogen dependencies
+191 silly prepareForInstallMany adding react@^0.14.8 from halogen peerDependencies
+192 silly prepareForInstallMany adding react-dom@^0.14.8 from halogen peerDependencies
+193 warn peerDependencies The peer dependency react@^0.14.8 included from halogen will no
+194 warn peerDependencies longer be automatically installed to fulfill the peerDependency
+195 warn peerDependencies in npm 3+. Your application will need to depend on it explicitly.
+196 warn peerDependencies The peer dependency react-dom@^0.14.8 included from halogen will no
+197 warn peerDependencies longer be automatically installed to fulfill the peerDependency
+198 warn peerDependencies in npm 3+. Your application will need to depend on it explicitly.
+199 verbose readDependencies loading dependencies from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/halogen/package.json
+200 silly cache add args [ 'domkit@0.0.1', null ]
+201 verbose cache add spec domkit@0.0.1
+202 silly cache add parsed spec Result {
+202 silly cache add   raw: 'domkit@0.0.1',
+202 silly cache add   scope: null,
+202 silly cache add   name: 'domkit',
+202 silly cache add   rawSpec: '0.0.1',
+202 silly cache add   spec: '0.0.1',
+202 silly cache add   type: 'version' }
+203 silly addNamed domkit@0.0.1
+204 verbose addNamed "0.0.1" is a plain semver version for domkit
+205 silly mapToRegistry name domkit
+206 silly mapToRegistry using default registry
+207 silly mapToRegistry registry https://registry.npmjs.org/
+208 silly mapToRegistry data Result {
+208 silly mapToRegistry   raw: 'domkit',
+208 silly mapToRegistry   scope: null,
+208 silly mapToRegistry   name: 'domkit',
+208 silly mapToRegistry   rawSpec: '',
+208 silly mapToRegistry   spec: 'latest',
+208 silly mapToRegistry   type: 'tag' }
+209 silly mapToRegistry uri https://registry.npmjs.org/domkit
+210 verbose addNameVersion registry:https://registry.npmjs.org/domkit not in flight; fetching
+211 verbose request uri https://registry.npmjs.org/domkit
+212 verbose request no auth needed
+213 info attempt registry request try #1 at 5:09:45 PM
+214 http request GET https://registry.npmjs.org/domkit
+215 http 200 https://registry.npmjs.org/domkit
+216 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+216 verbose headers   etag: '"F4CKZB6J9OB20F52Y5A99D0RO"',
+216 verbose headers   'content-type': 'application/json',
+216 verbose headers   'content-encoding': 'gzip',
+216 verbose headers   'cache-control': 'max-age=300',
+216 verbose headers   'content-length': '1738',
+216 verbose headers   'accept-ranges': 'bytes',
+216 verbose headers   date: 'Tue, 26 Jul 2016 00:09:45 GMT',
+216 verbose headers   via: '1.1 varnish',
+216 verbose headers   age: '0',
+216 verbose headers   connection: 'keep-alive',
+216 verbose headers   'x-served-by': 'cache-ord1737-ORD',
+216 verbose headers   'x-cache': 'MISS',
+216 verbose headers   'x-cache-hits': '0',
+216 verbose headers   'x-timer': 'S1469491785.437862,VS0,VE31',
+216 verbose headers   vary: 'Accept-Encoding' }
+217 silly get cb [ 200,
+217 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+217 silly get     etag: '"F4CKZB6J9OB20F52Y5A99D0RO"',
+217 silly get     'content-type': 'application/json',
+217 silly get     'content-encoding': 'gzip',
+217 silly get     'cache-control': 'max-age=300',
+217 silly get     'content-length': '1738',
+217 silly get     'accept-ranges': 'bytes',
+217 silly get     date: 'Tue, 26 Jul 2016 00:09:45 GMT',
+217 silly get     via: '1.1 varnish',
+217 silly get     age: '0',
+217 silly get     connection: 'keep-alive',
+217 silly get     'x-served-by': 'cache-ord1737-ORD',
+217 silly get     'x-cache': 'MISS',
+217 silly get     'x-cache-hits': '0',
+217 silly get     'x-timer': 'S1469491785.437862,VS0,VE31',
+217 silly get     vary: 'Accept-Encoding' } ]
+218 verbose get saving domkit to /Users/neilWhite/.npm/registry.npmjs.org/domkit/.cache.json
+219 verbose correctMkdir /Users/neilWhite/.npm correctMkdir not in flight; initializing
+220 silly mapToRegistry name domkit
+221 silly mapToRegistry using default registry
+222 silly mapToRegistry registry https://registry.npmjs.org/
+223 silly mapToRegistry data Result {
+223 silly mapToRegistry   raw: 'domkit',
+223 silly mapToRegistry   scope: null,
+223 silly mapToRegistry   name: 'domkit',
+223 silly mapToRegistry   rawSpec: '',
+223 silly mapToRegistry   spec: 'latest',
+223 silly mapToRegistry   type: 'tag' }
+224 silly mapToRegistry uri https://registry.npmjs.org/domkit
+225 verbose addRemoteTarball https://registry.npmjs.org/domkit/-/domkit-0.0.1.tgz not in flight; adding
+226 verbose addRemoteTarball [ 'https://registry.npmjs.org/domkit/-/domkit-0.0.1.tgz',
+226 verbose addRemoteTarball   '88399d586794efc1154fec6c22cfe50f19bd4dbb' ]
+227 info retry fetch attempt 1 at 5:09:45 PM
+228 info attempt registry request try #1 at 5:09:45 PM
+229 http fetch GET https://registry.npmjs.org/domkit/-/domkit-0.0.1.tgz
+230 http fetch 200 https://registry.npmjs.org/domkit/-/domkit-0.0.1.tgz
+231 silly fetchAndShaCheck shasum 88399d586794efc1154fec6c22cfe50f19bd4dbb
+232 verbose addTmpTarball /var/folders/6z/g3vy8fbd6yv986sdvkv2zkh40000gn/T/npm-3016-ac9942a2/registry.npmjs.org/domkit/-/domkit-0.0.1.tgz not in flight; adding
+233 verbose addTmpTarball already have metadata; skipping unpack for domkit@0.0.1
+234 verbose correctMkdir /Users/neilWhite/.npm correctMkdir not in flight; initializing
+235 silly cache afterAdd domkit@0.0.1
+236 verbose afterAdd /Users/neilWhite/.npm/domkit/0.0.1/package/package.json not in flight; writing
+237 verbose correctMkdir /Users/neilWhite/.npm correctMkdir not in flight; initializing
+238 verbose afterAdd /Users/neilWhite/.npm/domkit/0.0.1/package/package.json written
+239 silly install resolved [ { name: 'domkit',
+239 silly install resolved     version: '0.0.1',
+239 silly install resolved     description: 'Toolkit for DOM',
+239 silly install resolved     author: { name: 'Yuanyan Cao' },
+239 silly install resolved     license: 'MIT',
+239 silly install resolved     repository:
+239 silly install resolved      { type: 'git',
+239 silly install resolved        url: 'git+https://github.com/yuanyan/domkit.git' },
+239 silly install resolved     keywords: [ 'dom', 'domkit', 'toolkit' ],
+239 silly install resolved     gitHead: 'a68c4626bb9165085fbbef582b7cccecdbca8079',
+239 silly install resolved     bugs: { url: 'https://github.com/yuanyan/domkit/issues' },
+239 silly install resolved     homepage: 'https://github.com/yuanyan/domkit#readme',
+239 silly install resolved     _id: 'domkit@0.0.1',
+239 silly install resolved     scripts: {},
+239 silly install resolved     _shasum: '88399d586794efc1154fec6c22cfe50f19bd4dbb',
+239 silly install resolved     _from: 'domkit@0.0.1',
+239 silly install resolved     _npmVersion: '2.11.3',
+239 silly install resolved     _nodeVersion: '2.3.1',
+239 silly install resolved     _npmUser: { name: 'yuanyan', email: 'yuanyan.cao@gmail.com' },
+239 silly install resolved     maintainers: [ [Object] ],
+239 silly install resolved     dist:
+239 silly install resolved      { shasum: '88399d586794efc1154fec6c22cfe50f19bd4dbb',
+239 silly install resolved        tarball: 'https://registry.npmjs.org/domkit/-/domkit-0.0.1.tgz' },
+239 silly install resolved     directories: {},
+239 silly install resolved     _resolved: 'https://registry.npmjs.org/domkit/-/domkit-0.0.1.tgz' } ]
+240 info install domkit@0.0.1 into /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/halogen
+241 info installOne domkit@0.0.1
+242 verbose installOne of domkit to /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/halogen not in flight; installing
+243 verbose correctMkdir /Users/neilWhite/.npm/_locks correctMkdir not in flight; initializing
+244 verbose lock using /Users/neilWhite/.npm/_locks/domkit-b932d720cf6d28a6.lock for /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/halogen/node_modules/domkit
+245 silly install write writing domkit 0.0.1 to /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/halogen/node_modules/domkit
+246 verbose unbuild node_modules/halogen/node_modules/domkit
+247 silly gentlyRm /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/halogen/node_modules/domkit is being purged from base /Users/neilWhite/Desktop/hackReactor/Project-T2
+248 verbose gentlyRm don't care about contents; nuking /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/halogen/node_modules/domkit
+249 verbose tar unpack /Users/neilWhite/.npm/domkit/0.0.1/package.tgz
+250 verbose tar unpacking to /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/halogen/node_modules/domkit
+251 silly gentlyRm /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/halogen/node_modules/domkit is being purged
+252 verbose gentlyRm don't care about contents; nuking /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/halogen/node_modules/domkit
+253 silly gunzTarPerm modes [ '755', '644' ]
+254 silly gunzTarPerm extractEntry package.json
+255 silly gunzTarPerm extractEntry .npmignore
+256 silly gunzTarPerm extractEntry README.md
+257 silly gunzTarPerm extractEntry appendVendorPrefix.js
+258 silly gunzTarPerm extractEntry builtinStyle.js
+259 silly gunzTarPerm extractEntry removeEventListener.js
+260 silly gunzTarPerm extractEntry addEventListener.js
+261 silly gunzTarPerm extractEntry removeClass.js
+262 silly gunzTarPerm extractEntry getVendorPropertyName.js
+263 silly gunzTarPerm extractEntry hasClass.js
+264 silly gunzTarPerm extractEntry inViewport.js
+265 silly gunzTarPerm extractEntry insertKeyframesRule.js
+266 silly gunzTarPerm extractEntry addClass.js
+267 silly gunzTarPerm extractEntry insertRule.js
+268 silly gunzTarPerm extractEntry classNames.js
+269 silly gunzTarPerm extractEntry onEndTransition.js
+270 silly gunzTarPerm extractEntry throttle.js
+271 silly gunzTarPerm extractEntry transitionEvents.js
+272 silly gunzTarPerm extractEntry canUseDOM.js
+273 silly gunzTarPerm extractEntry getVendorPrefix.js
+274 silly gunzTarPerm extractEntry .eslintignore
+275 silly gunzTarPerm extractEntry .jscsrc
+276 silly gunzTarPerm extractEntry .eslintrc
+277 silly gunzTarPerm extractEntry .editorconfig
+278 verbose write writing to /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/halogen/node_modules/domkit/package.json
+279 info preinstall domkit@0.0.1
+280 verbose readDependencies loading dependencies from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/halogen/node_modules/domkit/package.json
+281 verbose readDependencies loading dependencies from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/halogen/node_modules/domkit/package.json
+282 silly install resolved []
+283 verbose about to build /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/halogen/node_modules/domkit
+284 info build /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/halogen/node_modules/domkit
+285 info linkStuff domkit@0.0.1
+286 silly linkStuff domkit@0.0.1 has /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/halogen/node_modules as its parent node_modules
+287 verbose linkBins domkit@0.0.1
+288 verbose linkMans domkit@0.0.1
+289 verbose rebuildBundles domkit@0.0.1
+290 info install domkit@0.0.1
+291 info postinstall domkit@0.0.1
+292 verbose unlock done using /Users/neilWhite/.npm/_locks/domkit-b932d720cf6d28a6.lock for /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/halogen/node_modules/domkit
+293 verbose about to build /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/halogen
+294 info build /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/halogen
+295 info linkStuff halogen@0.2.0
+296 silly linkStuff halogen@0.2.0 has /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules as its parent node_modules
+297 verbose linkBins halogen@0.2.0
+298 verbose linkMans halogen@0.2.0
+299 verbose rebuildBundles halogen@0.2.0
+300 verbose rebuildBundles [ 'domkit' ]
+301 info install halogen@0.2.0
+302 info postinstall halogen@0.2.0
+303 verbose readDependencies loading dependencies from /Users/neilWhite/Desktop/hackReactor/Project-T2/package.json
+304 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/babel-core/package.json
+305 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/babel-loader/package.json
+306 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/babel-preset-es2015/package.json
+307 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/babel-preset-react/package.json
+308 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/bluebird/package.json
+309 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/body-parser/package.json
+310 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/cors/package.json
+311 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/d3/package.json
+312 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/express/package.json
+313 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/fs/package.json
+314 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/google-trends-api/package.json
+315 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/halogen/package.json
+316 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/jquery/package.json
+317 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/live-server/package.json
+318 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/morgan/package.json
+319 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/mysql/package.json
+320 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/node-cron/package.json
+321 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/nodemon/package.json
+322 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/react/package.json
+323 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/react-bootstrap/package.json
+324 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/react-dom/package.json
+325 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/react-faux-dom/package.json
+326 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/react-fontawesome/package.json
+327 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/react-icons/package.json
+328 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/react-router/package.json
+329 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/request/package.json
+330 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/sequelize/package.json
+331 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/twitter/package.json
+332 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/underscore/package.json
+333 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/watson-developer-cloud/package.json
+334 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/webpack/package.json
+335 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/.bin/live-server/package.json
+336 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/.bin/nodemon/package.json
+337 verbose targetResolver reading package data from /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/.bin/webpack/package.json
+338 verbose already installed skipping react-dom@^0.14.8 /Users/neilWhite/Desktop/hackReactor/Project-T2
+339 verbose already installed skipping react@^0.14.8 /Users/neilWhite/Desktop/hackReactor/Project-T2
+340 silly install resolved []
+341 verbose unlock done using /Users/neilWhite/.npm/_locks/halogen-07dd9e8f9090934d.lock for /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/halogen
+342 info build /Users/neilWhite/Desktop/hackReactor/Project-T2
+343 info linkStuff greenfield@1.0.0
+344 silly linkStuff greenfield@1.0.0 has /Users/neilWhite/Desktop/hackReactor as its parent node_modules
+345 verbose linkBins greenfield@1.0.0
+346 verbose linkMans greenfield@1.0.0
+347 verbose rebuildBundles greenfield@1.0.0
+348 verbose rebuildBundles [ '.bin',
+348 verbose rebuildBundles   'babel-core',
+348 verbose rebuildBundles   'babel-loader',
+348 verbose rebuildBundles   'babel-preset-es2015',
+348 verbose rebuildBundles   'babel-preset-react',
+348 verbose rebuildBundles   'bluebird',
+348 verbose rebuildBundles   'body-parser',
+348 verbose rebuildBundles   'cors',
+348 verbose rebuildBundles   'd3',
+348 verbose rebuildBundles   'express',
+348 verbose rebuildBundles   'fs',
+348 verbose rebuildBundles   'google-trends-api',
+348 verbose rebuildBundles   'halogen',
+348 verbose rebuildBundles   'jquery',
+348 verbose rebuildBundles   'live-server',
+348 verbose rebuildBundles   'morgan',
+348 verbose rebuildBundles   'mysql',
+348 verbose rebuildBundles   'node-cron',
+348 verbose rebuildBundles   'nodemon',
+348 verbose rebuildBundles   'react',
+348 verbose rebuildBundles   'react-bootstrap',
+348 verbose rebuildBundles   'react-dom',
+348 verbose rebuildBundles   'react-faux-dom',
+348 verbose rebuildBundles   'react-fontawesome',
+348 verbose rebuildBundles   'react-icons',
+348 verbose rebuildBundles   'react-router',
+348 verbose rebuildBundles   'request',
+348 verbose rebuildBundles   'sequelize',
+348 verbose rebuildBundles   'twitter',
+348 verbose rebuildBundles   'underscore',
+348 verbose rebuildBundles   'watson-developer-cloud',
+348 verbose rebuildBundles   'webpack' ]
+349 verbose rebuild bundle /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/twitter
+350 info build /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules/twitter
+351 info preinstall twitter@1.3.0
+352 info linkStuff twitter@1.3.0
+353 silly linkStuff twitter@1.3.0 has /Users/neilWhite/Desktop/hackReactor/Project-T2/node_modules as its parent node_modules
+354 verbose linkBins twitter@1.3.0
+355 verbose linkMans twitter@1.3.0
+356 verbose rebuildBundles twitter@1.3.0
+357 verbose rebuildBundles [ 'deep-extend' ]
+358 info install twitter@1.3.0
+359 info postinstall twitter@1.3.0
+360 info install greenfield@1.0.0
+361 info postinstall greenfield@1.0.0
+362 info prepublish greenfield@1.0.0
+363 verbose validateInstall loading /Users/neilWhite/Desktop/hackReactor/Project-T2/package.json for validation
+364 verbose stack Error: The package react@15.2.1 does not satisfy its siblings' peerDependencies requirements!
+364 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:125:32
+364 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:268:7
+364 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:142:5
+364 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+364 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+364 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+364 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+364 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+364 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+364 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+365 verbose cwd /Users/neilWhite/Desktop/hackReactor/Project-T2
+366 error Darwin 15.5.0
+367 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install"
+368 error node v4.4.7
+369 error npm  v2.15.8
+370 error code EPEERINVALID
+371 error peerinvalid The package react@15.2.1 does not satisfy its siblings' peerDependencies requirements!
+371 error peerinvalid Peer halogen@0.2.0 wants react@^0.14.8
+371 error peerinvalid Peer react-bootstrap@0.29.5 wants react@>=0.14.0
+371 error peerinvalid Peer react-dom@15.2.1 wants react@^15.2.1
+371 error peerinvalid Peer react-faux-dom@2.7.1 wants react@*
+371 error peerinvalid Peer react-fontawesome@1.1.0 wants react@>=0.12.0
+371 error peerinvalid Peer react-icons@2.2.1 wants react@^0.14.0 || ^15.0.0
+371 error peerinvalid Peer react-router@2.6.0 wants react@^0.14.0 || ^15.0.0
+372 verbose exit [ 1, true ]
+>>>>>>> top tweet headling and message data rendering to the front page
