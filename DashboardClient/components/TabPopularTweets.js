@@ -12,8 +12,8 @@ var container = {
 }
 
 var menuBox = {
-	'height': '225px',
-	'margin-bottom': '25px',
+	'height': '230px',
+	'margin-bottom': '10px',
 	'background': '#394264',
 	'border-radius': '5px'
 }
@@ -54,9 +54,10 @@ const TabPopularTweets = (props) => {
     <div style={container}>
       <div style={menuBox}>
           <h2 style={titular}><Glyphicon glyph="retweet" style ={glyphOffset}/>{props.header}</h2>
-          <p style={boxText}><a class="tweet-link" href="#17">@FoxNews: </a>{props.sub}</p>
-          <p style={timeSent}>6 minutes ago</p>
-
+          <p style={boxText}><a class="tweet-link" href="#17">{props.sub1}</a> {props.sub2}</p>
+          <p style={timeSent}>{props.sub3}</p>
+          <p style={boxText}><a class="tweet-link" href="#17">{props.sub4}</a> {props.sub5}</p>
+          <p style={timeSent}>{props.sub6}</p>
       </div>
     </div>
   );

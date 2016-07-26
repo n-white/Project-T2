@@ -8,6 +8,7 @@ import TabPopularTweets from './TabPopularTweets';
 import TabNewsHeadlines from './TabNewsHeadlines';
 import ReactDOM from 'react-dom';
 
+import Loader from 'halogen/PulseLoader';
 
 import {Grid, Row, Col, Clearfix, Panel, Well, Button, Glyphicon} from 'react-bootstrap';
 import {Navbar, Nav, NavItem, NavDropdown, MenuItem, Image, Jumbotron} from 'react-bootstrap';
@@ -37,14 +38,16 @@ class Dashboard extends React.Component {
       publicSentiment: '',
       emotionalFeedback: '',
       trendHistory: '',
-      representativeTweet: '',
+      representativeTweet1: '',
+      representativeTweet2: '',
       representativeNewsSource: '',
       twitterSpinner: false,
       facebookSpinner: false, //not likely to be needed
       twitterSummary: '',
       facebookSummary: '',
       facebookTopHeadlines: '',
-      facebookLikes: ''
+      facebookLikes: '',
+      currentChart: 'twitterChart'
 
     }
   }
@@ -52,9 +55,9 @@ class Dashboard extends React.Component {
   componentDidMount () {
     //start everything
     this.getTrends();
-    this.updateChart(this.state.twitterData, '#twitterChart');
-    // this.updateChart(this.state.twitterData, '#facebookChart');
-    this.updateDonutChart(this.state.facebookData);
+    this.updateChart(this.state.twitterData, '#sentimentChart');
+    // this.updateChart(this.state.twitterData, '#sentimentChart');
+    // this.updateDonutChart(this.state.facebookData);
     // setInterval(this.getTrends.bind(this), 3000);
   }
 
@@ -89,8 +92,8 @@ class Dashboard extends React.Component {
           twitterSpinner: false,
           twitterSummary: d.summary
         });
-        d3.select('#twitterChart').selectAll('svg').remove();
-        context.updateChart(context.state.twitterData, '#twitterChart');
+        d3.select('#sentimentChart').selectAll('svg').remove();
+        context.updateChart(context.state.twitterData, '#sentimentChart');
       },
       dataType: 'json'
     });
@@ -130,8 +133,8 @@ class Dashboard extends React.Component {
         console.log(d.topHeadline);
         console.log('response fb mapped: ', fbdata, d);
         console.log('###$$$$$$$$$$$$$', context.state);
-        d3.select('#facebookChart').selectAll('svg').remove();
-        // context.updateChart(context.state.facebookData, '#facebookChart');
+        d3.select('#sentimentChart').selectAll('svg').remove();
+        // context.updateChart(context.state.facebookData, '#sentimentChart');
         context.updateDonutChart(context.state.facebookData);
 
       },
@@ -157,7 +160,12 @@ class Dashboard extends React.Component {
           return item;
         });
         context.setState({
-          representativeTweet: tweet
+          representativeTweet1user: '@' + tweet[0],
+          representativeTweet1headline: tweet[1],
+          representativeTweet1time: tweet[2] + ' hours ago',
+          representativeTweet2user: '@' + tweet[3],
+          representativeTweet2headline: tweet[4],
+          representativeTweet2time: tweet[5] + ' hours ago'
         })
       },
       dataType: 'json'
@@ -169,14 +177,17 @@ class Dashboard extends React.Component {
     this.setState({
       currentTrend: q
     })
+    if(this.state.currentChart === "twitterChart"){
+      this.twitterGrab(q);
+    } else {
+      this.facebookGrab(q);
+    }
     this.topTweetGrab(q);
-    this.facebookGrab(q);
-    this.twitterGrab(q);
   }
 
   updateChart (data, id) {
-    var width = 450, //960
-        height = 450, //500
+    var width = 350, //960
+        height = 350, //500
         radius = Math.min(width, height) / 2;
 
     //Ordinal scale w/ default domain and colors for range
@@ -202,6 +213,7 @@ class Dashboard extends React.Component {
         });
     //append both and svg and a g (group) element to the page. Move it over to the middle
     var svg = d3.select(id).append('svg')
+              .attr('class', 'twitterChart')
               .attr('width', width)
               .attr('height', height)
               .append('g')
@@ -228,8 +240,8 @@ class Dashboard extends React.Component {
     .text(function(d) {return d.data.label;});
   }
   updateDonutChart (dataset){
-    var width = 450,
-        height = 450,
+    var width = 350,
+        height = 350,
         outerRadius = Math.min(width, height) * .5 - 10,
         innerRadius = outerRadius * .6;
 
@@ -263,7 +275,8 @@ class Dashboard extends React.Component {
     var pie = d3.layout.pie()
         .sort(null);
 
-    var svg = d3.select("#facebookChart").append("svg")
+    var svg = d3.select("#sentimentChart").append("svg")
+        .attr('class', 'facebookChart')
         .attr("width", width)
         .attr("height", height);
 
@@ -297,7 +310,7 @@ class Dashboard extends React.Component {
     // end copied code //
 
     function transition(state) {
-      var path = d3.select('#facebookChart').selectAll(".arc > path")
+      var path = d3.select('#sentimentChart').selectAll(".arc > path")
           .data(state ? arcs(data0, data1) : arcs(data1, data0));
 
       var t0 = path.transition()
@@ -345,6 +358,19 @@ class Dashboard extends React.Component {
     }
   }
 
+  toggleChart () {
+    var currentChart = d3.select('#sentimentChart').selectAll('svg');
+    var currentChartClass = currentChart[0][0].className.animVal;
+    d3.select('#sentimentChart').selectAll('svg').remove();
+    if(currentChartClass === "twitterChart") {
+      this.updateDonutChart(this.state.facebookData);
+      this.setState({currentChart: 'facebookChart'});
+    } else {
+      this.updateChart(this.state.twitterData, '#sentimentChart');
+      this.setState({currentChart: 'twitterChart'});
+    }
+  }
+
   render () {
     var header = {
       'background-color': '#394264',
@@ -375,7 +401,7 @@ class Dashboard extends React.Component {
 
     var outline = {
       'background-color': 'rgb(57, 66, 100)',
-      'height': '525px',
+      'height': '450px' ,
       'border-radius': '5px'
     }
 
@@ -397,9 +423,10 @@ class Dashboard extends React.Component {
       'margin-bottom': '10px'
     }
 
-    var twitterChart = {
+    var sentimentChart = {
       'position': 'relative',
-      'left': '60%',
+      'left': '70%',
+      'top': '3%',
       '-webkit-transform': 'translateX(-50%)',
       '-ms-transform': 'translateX(-50%)',
 
@@ -434,20 +461,21 @@ class Dashboard extends React.Component {
                     }.bind(this))
                   }
                 </NavDropdown>
+                <Button onClick={this.toggleChart.bind(this)}>Toggle Chart</Button>
               </Nav>
             </Navbar>
           </Row>
           <Row>
 
-            <Col xs={6} md={4}><LeftTab info={this.state.trendHistory} header={this.state.currentTrend} sub="Current Topic"/></Col>
-            <Col xs={6} md={4}><MidTab info={this.state.publicSentiment} header="PUBLIC SENTIMENT" sub={this.state.twitterSummary}/></Col>
+            <Col xs={6} md={4}><LeftTab info={this.state.trendHistory} header={this.state.currentTrend} sub={"Trend Score: " + Math.ceil(Math.random()  * 100)}/></Col>
+            <Col xs={6} md={4}><MidTab loading={this.state.twitterSpinner} info={this.state.publicSentiment} header="PUBLIC SENTIMENT" sub={this.state.twitterSummary}/></Col>
             <Col xs={6} md={4}><RightTab info={this.state.emotionalFeedback} header={"EMOTIONAL FEEDBACK"} sub={this.state.facebookSummary}/></Col>
           </Row>
           <Row>
             <Col md={6} mdPush={6}>
               <Row>  
 
-                <TabPopularTweets info={this.state.trendHistory} header="MOST POPULAR TWEETS" sub={this.state.representativeTweet} />
+                <TabPopularTweets info={this.state.trendHistory} header="MOST POPULAR TWEETS" sub1={this.state.representativeTweet1user} sub2={this.state.representativeTweet1headline} sub3={this.state.representativeTweet1time} sub4={this.state.representativeTweet2user} sub5={this.state.representativeTweet2headline} sub6={this.state.representativeTweet2time}/>
               </Row>
               <Row>
                 <TabNewsHeadlines info={this.state.trendHistory} header="MOST POPULAR HEADLINES" sub1={this.state.facebookTopHeadlines[0]} sub2={this.state.facebookTopHeadlines[1]}/>
@@ -456,7 +484,9 @@ class Dashboard extends React.Component {
             <Col md={6} mdPull={6}>
               <div style={outline}>
                 <h1 style={titular}>SENTIMENT ANALYSIS</h1>
-                <div id="twitterChart" style={twitterChart}></div>
+                <div id="sentimentChart" style={sentimentChart}>
+                  {this.state.twitterSpinner ? <Loader color="#26A65B " size="16px" margin="4px"/> : <div></div>}
+                </div>
               </div>
             </Col>
           </Row>
