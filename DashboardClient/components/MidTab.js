@@ -2,6 +2,7 @@ import React from 'react';
 
 import {Panel, Well, Button} from 'react-bootstrap';
 import {Image, PageHeader, small} from 'react-bootstrap';
+import Loader from 'halogen/PulseLoader';
 
 
 var container = {
@@ -47,7 +48,7 @@ const MidTab = (props) => {
     <div style={container}>
       <div style={menuBox}>
           <h2 style={titular}>{props.header}</h2>
-          <p style={boxText}>{props.sub}</p>
+          <p style={boxText}>{props.sub ? props.sub : 'N/A'}</p> }
       </div>
     </div>
   );

@@ -21138,6 +21138,10 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
+	var _PulseLoader = __webpack_require__(506);
+
+	var _PulseLoader2 = _interopRequireDefault(_PulseLoader);
+
 	var _reactBootstrap = __webpack_require__(176);
 
 	var _reactRouter = __webpack_require__(445);
@@ -21613,7 +21617,7 @@
 	          _react2.default.createElement(
 	            _reactBootstrap.Col,
 	            { xs: 6, md: 4 },
-	            _react2.default.createElement(_MidTab2.default, { info: this.state.publicSentiment, header: 'PUBLIC SENTIMENT', sub: this.state.twitterSummary })
+	            _react2.default.createElement(_MidTab2.default, { loading: this.state.twitterSpinner, info: this.state.publicSentiment, header: 'PUBLIC SENTIMENT', sub: this.state.twitterSummary })
 	          ),
 	          _react2.default.createElement(
 	            _reactBootstrap.Col,
@@ -21649,7 +21653,11 @@
 	                { style: titular },
 	                'SENTIMENT ANALYSIS'
 	              ),
-	              _react2.default.createElement('div', { id: 'sentimentChart', style: sentimentChart })
+	              _react2.default.createElement(
+	                'div',
+	                { id: 'sentimentChart', style: sentimentChart },
+	                this.state.twitterSpinner ? _react2.default.createElement(_PulseLoader2.default, { color: '#26A65B ', size: '16px', margin: '4px' }) : _react2.default.createElement('div', null)
+	              )
 	            )
 	          )
 	        ),
@@ -60826,6 +60834,10 @@
 
 	var _reactBootstrap = __webpack_require__(176);
 
+	var _PulseLoader = __webpack_require__(506);
+
+	var _PulseLoader2 = _interopRequireDefault(_PulseLoader);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var container = {
@@ -60880,8 +60892,9 @@
 							_react2.default.createElement(
 									'p',
 									{ style: boxText },
-									props.sub
-							)
+									props.sub ? props.sub : 'N/A'
+							),
+							' }'
 					)
 			);
 	};
@@ -60957,7 +60970,7 @@
 							_react2.default.createElement(
 									'p',
 									{ style: boxText },
-									props.sub
+									props.sub ? props.sub : "N/A"
 							)
 					)
 			);
@@ -66644,6 +66657,295 @@
 
 	exports.default = (0, _createRouterHistory2.default)(_createHashHistory2.default);
 	module.exports = exports['default'];
+
+/***/ },
+/* 506 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+	var assign = __webpack_require__(507);
+	var insertKeyframesRule = __webpack_require__(510);
+
+	/**
+	 * @type {Object}
+	 */
+	var keyframes = {
+	    '0%': {
+	        transform: 'scale(1)',
+	        opacity: 1
+	    },
+	    '45%': {
+	        transform: 'scale(0.1)',
+	        opacity: 0.7
+	    },
+	    '80%': {
+	        transform: 'scale(1)',
+	        opacity: 1
+	    }
+	};
+
+	/**
+	 * @type {String}
+	 */
+	var animationName = insertKeyframesRule(keyframes);
+
+	var Loader = React.createClass({
+	    displayName: 'Loader',
+
+	    /**
+	     * @type {Object}
+	     */
+	    propTypes: {
+	        loading: React.PropTypes.bool,
+	        color: React.PropTypes.string,
+	        size: React.PropTypes.string,
+	        margin: React.PropTypes.string
+	    },
+
+	    /**
+	     * @return {Object}
+	     */
+	    getDefaultProps: function getDefaultProps() {
+	        return {
+	            loading: true,
+	            color: '#ffffff',
+	            size: '15px',
+	            margin: '2px'
+	        };
+	    },
+
+	    /**
+	     * @return {Object}
+	     */
+	    getBallStyle: function getBallStyle() {
+	        return {
+	            backgroundColor: this.props.color,
+	            width: this.props.size,
+	            height: this.props.size,
+	            margin: this.props.margin,
+	            borderRadius: '100%',
+	            verticalAlign: this.props.verticalAlign
+	        };
+	    },
+
+	    /**
+	     * @param  {Number} i
+	     * @return {Object}
+	     */
+	    getAnimationStyle: function getAnimationStyle(i) {
+	        var animation = [animationName, '0.75s', i * 0.12 + 's', 'infinite', 'cubic-bezier(.2,.68,.18,1.08)'].join(' ');
+	        var animationFillMode = 'both';
+
+	        return {
+	            animation: animation,
+	            animationFillMode: animationFillMode
+	        };
+	    },
+
+	    /**
+	     * @param  {Number} i
+	     * @return {Object}
+	     */
+	    getStyle: function getStyle(i) {
+	        return assign(this.getBallStyle(i), this.getAnimationStyle(i), {
+	            display: 'inline-block'
+	        });
+	    },
+
+	    /**
+	     * @param  {Boolean} loading
+	     * @return {ReactComponent || null}
+	     */
+	    renderLoader: function renderLoader(loading) {
+	        if (loading) {
+	            return React.createElement(
+	                'div',
+	                { id: this.props.id, className: this.props.className },
+	                React.createElement('div', { style: this.getStyle(1) }),
+	                React.createElement('div', { style: this.getStyle(2) }),
+	                React.createElement('div', { style: this.getStyle(3) })
+	            );
+	        }
+
+	        return null;
+	    },
+
+	    render: function render() {
+	        return this.renderLoader(this.props.loading);
+	    }
+	});
+
+	module.exports = Loader;
+
+/***/ },
+/* 507 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var getVendorPropertyName = __webpack_require__(508);
+
+	module.exports = function(target, sources) {
+	  var to = Object(target);
+	  var hasOwnProperty = Object.prototype.hasOwnProperty;
+
+	  for (var nextIndex = 1; nextIndex < arguments.length; nextIndex++) {
+	    var nextSource = arguments[nextIndex];
+	    if (nextSource == null) {
+	      continue;
+	    }
+
+	    var from = Object(nextSource);
+
+	    for (var key in from) {
+	      if (hasOwnProperty.call(from, key)) {
+	        to[key] = from[key];
+	      }
+	    }
+	  }
+
+	  var prefixed = {};
+	  for (var key in to) {
+	    prefixed[getVendorPropertyName(key)] = to[key]
+	  }
+
+	  return prefixed
+	}
+
+
+/***/ },
+/* 508 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var builtinStyle = __webpack_require__(509);
+	var prefixes = ['Moz', 'Webkit', 'O', 'ms'];
+	var domVendorPrefix;
+
+	// Helper function to get the proper vendor property name. (transition => WebkitTransition)
+	module.exports = function(prop, isSupportTest) {
+
+	  var vendorProp;
+	  if (prop in builtinStyle) return prop;
+
+	  var UpperProp = prop.charAt(0).toUpperCase() + prop.substr(1);
+
+	  if (domVendorPrefix) {
+
+	    vendorProp = domVendorPrefix + UpperProp;
+	    if (vendorProp in builtinStyle) {
+	      return vendorProp;
+	    }
+	  } else {
+
+	    for (var i = 0; i < prefixes.length; ++i) {
+	      vendorProp = prefixes[i] + UpperProp;
+	      if (vendorProp in builtinStyle) {
+	        domVendorPrefix = prefixes[i];
+	        return vendorProp;
+	      }
+	    }
+	  }
+
+	  // if support test, not fallback to origin prop name
+	  if (!isSupportTest) {
+	    return prop;
+	  }
+
+	}
+
+
+/***/ },
+/* 509 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	module.exports = document.createElement('div').style;
+
+
+/***/ },
+/* 510 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var insertRule = __webpack_require__(511);
+	var vendorPrefix = __webpack_require__(512)();
+	var index = 0;
+
+	module.exports = function(keyframes) {
+	  // random name
+	  var name = 'anim_' + (++index) + (+new Date);
+	  var css = "@" + vendorPrefix + "keyframes " + name + " {";
+
+	  for (var key in keyframes) {
+	    css += key + " {";
+
+	    for (var property in keyframes[key]) {
+	      var part = ":" + keyframes[key][property] + ";";
+	      // We do vendor prefix for every property
+	      css += vendorPrefix + property + part;
+	      css += property + part;
+	    }
+
+	    css += "}";
+	  }
+
+	  css += "}";
+
+	  insertRule(css);
+
+	  return name
+	}
+
+
+/***/ },
+/* 511 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	var extraSheet;
+
+	module.exports = function(css) {
+
+	  if (!extraSheet) {
+	    // First time, create an extra stylesheet for adding rules
+	    extraSheet = document.createElement('style');
+	    document.getElementsByTagName('head')[0].appendChild(extraSheet);
+	    // Keep reference to actual StyleSheet object (`styleSheet` for IE < 9)
+	    extraSheet = extraSheet.sheet || extraSheet.styleSheet;
+	  }
+
+	  var index = (extraSheet.cssRules || extraSheet.rules).length;
+	  extraSheet.insertRule(css, index);
+
+	  return extraSheet;
+	}
+
+
+/***/ },
+/* 512 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	var cssVendorPrefix;
+
+	module.exports = function() {
+
+	  if (cssVendorPrefix) return cssVendorPrefix;
+
+	  var styles = window.getComputedStyle(document.documentElement, '');
+	  var pre = (Array.prototype.slice.call(styles).join('').match(/-(moz|webkit|ms)-/) || (styles.OLink === '' && ['', 'o']))[1];
+
+	  return cssVendorPrefix = '-' + pre + '-';
+	}
+
 
 /***/ }
 /******/ ]);
