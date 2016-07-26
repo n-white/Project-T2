@@ -8,6 +8,7 @@ import TabPopularTweets from './TabPopularTweets';
 import TabNewsHeadlines from './TabNewsHeadlines';
 import ReactDOM from 'react-dom';
 
+import Loader from 'halogen/PulseLoader';
 
 import {Grid, Row, Col, Clearfix, Panel, Well, Button, Glyphicon} from 'react-bootstrap';
 import {Navbar, Nav, NavItem, NavDropdown, MenuItem, Image, Jumbotron} from 'react-bootstrap';
@@ -463,7 +464,7 @@ class Dashboard extends React.Component {
           <Row>
 
             <Col xs={6} md={4}><LeftTab info={this.state.trendHistory} header={this.state.currentTrend} sub={"Trend Score: " + Math.ceil(Math.random()  * 100)}/></Col>
-            <Col xs={6} md={4}><MidTab info={this.state.publicSentiment} header="PUBLIC SENTIMENT" sub={this.state.twitterSummary}/></Col>
+            <Col xs={6} md={4}><MidTab loading={this.state.twitterSpinner} info={this.state.publicSentiment} header="PUBLIC SENTIMENT" sub={this.state.twitterSummary}/></Col>
             <Col xs={6} md={4}><RightTab info={this.state.emotionalFeedback} header={"EMOTIONAL FEEDBACK"} sub={this.state.facebookSummary}/></Col>
           </Row>
           <Row>
@@ -479,7 +480,9 @@ class Dashboard extends React.Component {
             <Col md={6} mdPull={6}>
               <div style={outline}>
                 <h1 style={titular}>SENTIMENT ANALYSIS</h1>
-                <div id="sentimentChart" style={sentimentChart}></div>
+                <div id="sentimentChart" style={sentimentChart}>
+                  {this.state.twitterSpinner ? <Loader color="#26A65B " size="16px" margin="4px"/> : <div></div>}
+                </div>
               </div>
             </Col>
           </Row>
