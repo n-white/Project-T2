@@ -147,7 +147,7 @@ module.exports = {
 				var secondTweetTime = Math.round((new Date().getTime() - new Date(tweets.statuses[1].created_at).getTime()) / 3600000);
 
 				// Send top two tweets to front end
-				console.log(tweets.statuses[0].text)
+				// console.log(tweets.statuses[0].text)
 				res.json({firstUser: tweets.statuses[0].user.screen_name, firstTweet: tweets.statuses[0].text, firstTweetTime: firstTweetTime, secondUser: tweets.statuses[1].user.screen_name, secondTweet: tweets.statuses[1].text, secondTweetTime: secondTweetTime});
 			}
 		});		
