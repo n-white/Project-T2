@@ -81,7 +81,7 @@ module.exports = {
 			})
 
 			// Find the most dominant facebook reaction			
-			var tempReactions = [[num_wows, 'Mostly Surprised'], [num_hahas, 'Mostly Amused'], [num_sads, 'Mostly Sad'], [num_angrys, 'Mostly Angry'], [num_loves, 'Mostly Loved']];
+			var tempReactions = [[0, 'n/a'], [num_wows, 'Mostly Surprised'], [num_hahas, 'Mostly Amused'], [num_sads, 'Mostly Sad'], [num_angrys, 'Mostly Angry'], [num_loves, 'Mostly Loved']];
 			tempReactions = tempReactions.sort(function(a,b) {
 				if (a[0] < b[0]) {
 					return 1;
@@ -95,7 +95,7 @@ module.exports = {
 			// Create the final object to be sent to the client
 			var summary = {summary: tempReactions[0][1], topHeadline: topArticle.title, topHeadlineLink: topArticle.link, secondHeadline: secondArticle.title, secondHeadlineLink: secondArticle.link, Alikes: num_likes, loves: num_loves, wows: num_wows, hahas: num_hahas, sads: num_sads, angrys: num_angrys}
 
-			console.log(summary)
+			// console.log(summary)
 
 			res.send(summary)
 
