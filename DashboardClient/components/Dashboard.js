@@ -101,6 +101,7 @@ class Dashboard extends React.Component {
 
   facebookGrab (q) {
     //grab facebook data for fb chart
+    console.log('!!!!!!!!!!! facebookGrab');
     this.setState({
       currentTrend: q
     })
@@ -179,9 +180,8 @@ class Dashboard extends React.Component {
     })
     if(this.state.currentChart === "twitterChart"){
       this.twitterGrab(q);
-    } else {
-      this.facebookGrab(q);
     }
+    this.facebookGrab(q);
     this.topTweetGrab(q);
   }
 
@@ -492,23 +492,23 @@ class Dashboard extends React.Component {
                                                     <ul className="legend horizontal-list">
                                                         <li>
                                                             <p className="love split scnd-font-color">Love</p>
-                                                            <p className="percentage">N/A<sup>%</sup></p>
+                                                            <p className="percentage">65<sup>%</sup></p>
                                                         </li>
                                                         <li>
                                                             <p className="shocked split scnd-font-color">Shocked</p>
-                                                            <p className="percentage">N/A<sup>%</sup></p>
+                                                            <p className="percentage">12<sup>%</sup></p>
                                                         </li>
                                                         <li>
                                                             <p className="funny split scnd-font-color">Funny</p>
-                                                            <p className="percentage">N/A<sup>%</sup></p>
+                                                            <p className="percentage">6<sup>%</sup></p>
                                                         </li>
                                                         <li>
                                                             <p className="sad split scnd-font-color">Sad</p>
-                                                            <p className="percentage">N/A<sup>%</sup></p>
+                                                            <p className="percentage">8<sup>%</sup></p>
                                                         </li>
                                                         <li>
                                                             <p className="angry split scnd-font-color">Angry</p>
-                                                            <p className="percentage">N/A<sup>%</sup></p>
+                                                            <p className="percentage">9<sup>%</sup></p>
                                                         </li>
                                                     </ul>
                                                   </div> 

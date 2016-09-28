@@ -7,6 +7,7 @@ import datetime
 from dateutil.parser import parse as parse_date
 import schedule
 import time
+import os
 
 app_id = "605873279587083"
 app_secret = "1e0e1365da5716e80b1eb898b73dd9cb" # DO NOT SHARE WITH ANYONE!
@@ -146,7 +147,10 @@ def processFacebookPageFeedStatus(status, access_token):
             num_likes, num_loves, num_wows, num_hahas, num_sads, num_angrys)
 
 def scrapeFacebookPageFeedStatus(page_id, access_token):
-    with open('%s_facebook_statuses.csv' % page_id, 'wb') as file:
+    dir_path = os.path.dirname(os.path.abspath(__file__))
+    print 'directory name: ', dir_path
+    # /Users/neilWhite/Desktop/hackReactor/Project-T2/server/facebookScraper
+    with open('%(x)s/%(y)s_facebook_statuses.csv' % {'x': dir_path, 'y': page_id}, 'wb') as file:
         w = csv.writer(file)
         w.writerow(["status_id", "status_message", "link_name", "status_type",
                     "status_link", "status_published", "num_reactions", 
@@ -157,7 +161,7 @@ def scrapeFacebookPageFeedStatus(page_id, access_token):
         num_processed = 0   # keep a count on how many we've processed
         scrape_starttime = datetime.datetime.now()
 
-        print "Scraping %s Facebook Page: %s\n" % (page_id, scrape_starttime)
+        # print "Scraping %s Facebook Page: %s\n" % (page_id, scrape_starttime)
 
         statuses = getFacebookPageFeedData(page_id, access_token, 100)
 
@@ -168,7 +172,7 @@ def scrapeFacebookPageFeedStatus(page_id, access_token):
                 if 'reactions' in status:
                     w.writerow(processFacebookPageFeedStatus(status,
                         access_token))
-                print status 
+                # print status 
                 today = datetime.date.today()
                 twodays = today + datetime.timedelta(days=-2)
                 createdTime = status.get('created_time')
@@ -176,7 +180,7 @@ def scrapeFacebookPageFeedStatus(page_id, access_token):
                 if dt.date() < twodays:
                     print 'WOAH THIS WORKED'
 
-                print createdTime
+                # print createdTime
                 # output progress occasionally to make sure code is not
                 # stalling
                 num_processed += 1
@@ -369,7 +373,6 @@ schedule.every(1).minutes.do(scrapeFacebookPageFeedStatus, **et)
 schedule.every(1).minutes.do(scrapeFacebookPageFeedStatus, **eonline)
 schedule.every(1).minutes.do(scrapeFacebookPageFeedStatus, **usweekly)
 schedule.every(1).minutes.do(scrapeFacebookPageFeedStatus, **popsci)
-# new ones start here
 schedule.every(1).minutes.do(scrapeFacebookPageFeedStatus, **esquire)
 schedule.every(1).minutes.do(scrapeFacebookPageFeedStatus, **abc)
 schedule.every(1).minutes.do(scrapeFacebookPageFeedStatus, **nbc)

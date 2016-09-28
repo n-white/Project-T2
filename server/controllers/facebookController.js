@@ -20,6 +20,8 @@ module.exports = {
 			}
 		})
 
+		console.log('!!!!!!!!!!! two keywords are: ', twoKeywords);
+
 		// Search the database for articles that contain the selected trend
 		// Specifically, search is performed on the FB_Sentiments table in MySQL using the first two key words of a trend name
 		db.FB_Sentiments.findAll({where: {status_message: {like: '%' + twoKeywords + '%'}}}).then(function(data) {

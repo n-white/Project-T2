@@ -6,9 +6,8 @@ var fs = require('fs');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var cron = require('node-cron');
-var exec = require('child_process').exec;
-var spawn = require("child_process").spawn;
-
+var child_process = require('child_process');
+var spawn = require('child_process').spawn;
 
 var app = express();
 
@@ -24,13 +23,6 @@ app.listen(3000, function (req, res) {
 	console.log('server is listening on 3000');
 });
 
-//////
-
-// var task = cron.schedule('* * * * *', function() {
-//   console.log('Server is still running');
-// }, false);
-
-
 // var csvScheduler = cron.schedule('* * * * *', function() {
 //   console.log('Update CSV running');
 //   exec(__dirname + '/updateCSV.sh', function(error, stdout, stderr) {
@@ -42,16 +34,53 @@ app.listen(3000, function (req, res) {
 //   });
 // }, false);
 
+// var fbScrape = cron.schedule('* * * * *', function() {
+	// console.log('Facebook scraper is running!')
+	// var process = child_process.spawn('python', ['./facebookScraper/fbScrape.py'])
+	// process.stdout.on('data', 'utf8', function(data) {
+	// 	console.log('IT WORKED!', data);
+	// });
+// }, false)
 
-// var facebookScrapeScheduler = cron.schedule('* * * * *', function() {
-//   console.log('Facebook Scraper running');
-//     var process = spawn('python',['/facebookScraper/fbScrape.py']);
-// }, false);
+
+// var ls = spawn('python',['./server/facebookScraper/fbScrape.py']);	
+
+
+// THIS SECTION IS WORKING!
+// var fbScrape = cron.schedule('0 * * * *', function() {
+// 	// console.log('Facebook scraper is running!')
+//   var ls = spawn('python',['./server/facebookScraper/fbScrape.py']);	
+// }, false)
+
+var loadDatabase = cron.schedule('* * * * *', function() {
+	console.log('Loading files into MySQL!')
+	var loadCSV = spawn('sh', ['./server/updateCsv.sh']);
+}, false)
+
+// fbScrape.start();
+
+var ls = spawn('python',['./server/facebookScraper/fbScrape.py']);	
+loadDatabase.start();
 
 
 
+// ls.stdout.on('data', function (data) {
+//     console.log('stdout: ' + data);
+// });
 
-// task.start();
+// ls.stderr.on('data', function (data) {
+//     console.log('stderr: ' + data);
+// });
+
+
+
+// CRON SCHEDULE FOR EVERY 1 HR 15 MINUTES
+// 15 * * * *
+// CRON SCHEDULE FOR EVERY 1 HR 0 MINUTES 
+// 0 * * * *
+
+
+// runScraper.start();
 // csvScheduler.start();
 // facebookScrapeScheduler.start();
 
