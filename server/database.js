@@ -1,5 +1,18 @@
+var api_keys = require('../api_keys.js')
 var Sequelize = require('Sequelize');
-var sequelize = new Sequelize('trendwave', 'root', 'cake');
+
+var sequelize = new Sequelize(api_keys.mysql_database, api_keys.msql_username, api_keys.mysql_password, {
+  host: api_keys.mysql_host,
+  dialect: 'mysql',
+
+  pool: {
+    max: 5,
+    min: 0,
+    idle: 10000
+  },
+});
+
+
 var mysql = require('mysql');
 
 // Table for top trends

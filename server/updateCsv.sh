@@ -1,9 +1,9 @@
 #!/bin/sh
-reformat_database="ALTER DATABASE trendwave CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;"
+reformat_database="ALTER DATABASE trendly CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;"
 reformat_table="ALTER TABLE FB_Sentiments CONVERT TO CHARACTER SET utf8mb4 COLLATE;"
 
 # Steps one and two remove the contents of the FB_Sentiments table in the trendwave database
-stepone="use trendwave;"
+stepone="use trendly;"
 steptwo="truncate table FB_Sentiments;"
 
 # The CSV files (which contain the scraped news data from Facebook) are loaded into MySQL
@@ -37,7 +37,7 @@ load27="LOAD DATA INFILE '/Users/neilWhite/Desktop/hackReactor/Project-T2/server
 load28="LOAD DATA INFILE '/Users/neilWhite/Desktop/hackReactor/Project-T2/server/facebookScraper/Esquire_facebook_statuses.csv' INTO TABLE FB_Sentiments FIELDS TERMINATED BY ','  ENCLOSED BY '\"' IGNORE 1 ROWS;"
 
 # The following code runs the actual bash scripts seen above
-mysql --local-infile -u root -pcake << eof
+mysql -utrendly -pcakecake -h trendlydbinstance.crabfuzaoa6j.us-east-1.rds.amazonaws.com << eof
 $stepone
 $steptwo
 $load1
