@@ -1,16 +1,7 @@
 var api_keys = require('../api_keys.js')
 var Sequelize = require('sequelize');
 
-var sequelize = new Sequelize(api_keys.mysql_database, api_keys.msql_username, api_keys.mysql_password, {
-  host: api_keys.mysql_host,
-  dialect: 'mysql',
-
-  pool: {
-    max: 5,
-    min: 0,
-    idle: 10000
-  },
-});
+var sequelize = new Sequelize('trendwave', 'root', 'cake');
 
 
 var mysql = require('mysql');
