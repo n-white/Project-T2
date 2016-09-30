@@ -1,5 +1,5 @@
 var api_keys = require('../api_keys.js')
-var Sequelize = require('Sequelize');
+var Sequelize = require('sequelize');
 
 var sequelize = new Sequelize(api_keys.mysql_database, api_keys.msql_username, api_keys.mysql_password, {
   host: api_keys.mysql_host,

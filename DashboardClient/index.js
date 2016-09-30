@@ -21453,9 +21453,9 @@
 
 	var _Tab2 = _interopRequireDefault(_Tab);
 
-	var _leftTab = __webpack_require__(442);
+	var _LeftTab = __webpack_require__(515);
 
-	var _leftTab2 = _interopRequireDefault(_leftTab);
+	var _LeftTab2 = _interopRequireDefault(_LeftTab);
 
 	var _MidTab = __webpack_require__(443);
 
@@ -21954,7 +21954,7 @@
 	          _react2.default.createElement(
 	            _reactBootstrap.Col,
 	            { xs: 6, md: 4 },
-	            _react2.default.createElement(_leftTab2.default, { info: this.state.trendHistory, header: this.state.currentTrend, sub: "Trend Score: " + Math.ceil(Math.random() * 100) })
+	            _react2.default.createElement(_LeftTab2.default, { info: this.state.trendHistory, header: this.state.currentTrend, sub: "Trend Score: " + Math.ceil(Math.random() * 100) })
 	          ),
 	          _react2.default.createElement(
 	            _reactBootstrap.Col,
@@ -61278,83 +61278,7 @@
 	exports.ValidComponentChildren = _ValidComponentChildren3['default'];
 
 /***/ },
-/* 442 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-			value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactBootstrap = __webpack_require__(176);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var container = {
-			'height': '150px',
-			'float': 'left',
-			'width': '100%',
-			'padding-right': '7.5px'
-
-	};
-
-	var menuBox = {
-			'height': '150px',
-			'margin-bottom': '25px',
-			'background': '#394264',
-			'border-radius': '5px'
-	};
-
-	var titular = {
-			'display': 'block',
-			'line-height': '50px',
-			'margin': '0',
-			'text-align': 'center',
-			'border-top-left-radius': '5px',
-			'border-top-right-radius': '5px',
-			'font-size': '17px',
-			'color': '#fff',
-			'background': '#11a8ab',
-			'font-weight': 'bold'
-
-	};
-
-	var boxText = {
-			'text-align': 'center',
-			'font-size': '30px',
-			'color': 'white',
-			'margin-top': '25px'
-	};
-
-	var LeftTab = function LeftTab(props) {
-			return _react2.default.createElement(
-					'div',
-					{ style: container },
-					_react2.default.createElement(
-							'div',
-							{ style: menuBox },
-							_react2.default.createElement(
-									'h2',
-									{ style: titular },
-									props.header
-							),
-							_react2.default.createElement(
-									'p',
-									{ style: boxText },
-									props.sub
-							)
-					)
-			);
-	};
-
-	exports.default = LeftTab;
-
-/***/ },
+/* 442 */,
 /* 443 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -67523,6 +67447,83 @@
 
 	exports.default = (0, _createRouterHistory2.default)(_createHashHistory2.default);
 	module.exports = exports['default'];
+
+/***/ },
+/* 515 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+			value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactBootstrap = __webpack_require__(176);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var container = {
+			'height': '150px',
+			'float': 'left',
+			'width': '100%',
+			'padding-right': '7.5px'
+
+	};
+
+	var menuBox = {
+			'height': '150px',
+			'margin-bottom': '25px',
+			'background': '#394264',
+			'border-radius': '5px'
+	};
+
+	var titular = {
+			'display': 'block',
+			'line-height': '50px',
+			'margin': '0',
+			'text-align': 'center',
+			'border-top-left-radius': '5px',
+			'border-top-right-radius': '5px',
+			'font-size': '17px',
+			'color': '#fff',
+			'background': '#11a8ab',
+			'font-weight': 'bold'
+
+	};
+
+	var boxText = {
+			'text-align': 'center',
+			'font-size': '30px',
+			'color': 'white',
+			'margin-top': '25px'
+	};
+
+	var LeftTab = function LeftTab(props) {
+			return _react2.default.createElement(
+					'div',
+					{ style: container },
+					_react2.default.createElement(
+							'div',
+							{ style: menuBox },
+							_react2.default.createElement(
+									'h2',
+									{ style: titular },
+									props.header
+							),
+							_react2.default.createElement(
+									'p',
+									{ style: boxText },
+									props.sub
+							)
+					)
+			);
+	};
+
+	exports.default = LeftTab;
 
 /***/ }
 /******/ ]);

@@ -1,7 +1,7 @@
 import React from 'react';
 import Tab from './Tab';
 
-import LeftTab from './leftTab';
+import LeftTab from './LeftTab';
 import MidTab from './MidTab';
 import RightTab from './RightTab';
 import TabPopularTweets from './TabPopularTweets';
