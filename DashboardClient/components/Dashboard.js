@@ -64,7 +64,7 @@ class Dashboard extends React.Component {
   getTrends () {
     //pull in data from google trends to populate dropdown menu
     var context = this;
-    $.get('http://localhost:3000/trends', function(data){
+    $.get('http://ec2-52-37-4-189.us-west-2.compute.amazonaws.com:3000/trends', function(data){
 
       context.setState({
         trends: data
@@ -83,7 +83,7 @@ class Dashboard extends React.Component {
   
     $.ajax({
       method: "POST",
-      url: 'http://localhost:3000/grabTweets',
+      url: 'http://ec2-52-37-4-189.us-west-2.compute.amazonaws.com:3000/grabTweets',
       data: JSON.stringify({q: q}),
       contentType: "application/json",
       success: function(d){
@@ -108,7 +108,7 @@ class Dashboard extends React.Component {
     var context = this;
     $.ajax({
       method: "POST",
-      url: 'http://localhost:3000/grabFbook',
+      url: 'http://ec2-52-37-4-189.us-west-2.compute.amazonaws.com:3000/grabFbook',
       data: JSON.stringify({q: q}),
       contentType: "application/json",
       success: function(d){
@@ -153,7 +153,7 @@ class Dashboard extends React.Component {
 
     $.ajax({
       method: "POST",
-      url: 'http://localhost:3000/grabTopTweet',
+      url: 'http://ec2-52-37-4-189.us-west-2.compute.amazonaws.com:3000/grabTopTweet',
       data: JSON.stringify({q: q}),
       contentType: "application/json",
       success: function(d){
